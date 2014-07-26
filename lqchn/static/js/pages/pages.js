@@ -118,8 +118,8 @@ $(document).ready(function(){
                 alert("act_id = " + actid);
                 $("#modeul").append(clubcode);
                 $(".act_title:eq("+ String(j) +")").html(acttitle);
-                $(".act_title:eq("+ String(j) +")").attr("href", "/club_home/?c_id=" + String(actid));
-                $(".imghref:eq("+ String(j) +")").attr("href", "/club_home/?c_id=" + String(actid));
+                $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + String(actid));
+                $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + String(actid));
                 $(".act_intro:eq("+ String(j) +")").html(actbrief);
                 $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
             }

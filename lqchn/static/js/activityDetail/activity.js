@@ -4,7 +4,7 @@ var gloabl_cid = "";
 
 $(document).ready(function(){
 
-   // gloabl_aid = $("#hideaid").html();
+    gloabl_aid = $("#hideaid").html();
 
     getallinfo();
 
