@@ -122,24 +122,25 @@ $(document).ready(function(){
                 $(".act_intro:eq("+ String(j) +")").html(actbrief);
                 $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
             }
-        });
 
-        var actlistall = "/activity/list/club/?u_id=" + global_userid;
-        $.getJSON(actlistall ,function(data){
-            for(var i = 0; i < data.length; i++, j++)
-            {
-                var acttitle = data[i].title;
-                var actbrief = data[i].brief;
-                var actlogo = data[i].image_url;
-                var actid = data[i].id;
-                $("#modeul").append(clubcode);
-                $(".act_title:eq("+ String(j) +")").html(acttitle);
-                $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
-                $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
-                $(".act_intro:eq("+ String(j) +")").html(actbrief);
-                $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
-                alert("act_id = " + actid);
-            }
+            var actlistall = "/activity/list/club/?u_id=" + global_userid;
+            $.getJSON(actlistall ,function(data){
+                for(var i = 0; i < data.length; i++, j++)
+                {
+                    var acttitle = data[i].title;
+                    var actbrief = data[i].brief;
+                    var actlogo = data[i].image_url;
+                    var actid = data[i].id;
+                    $("#modeul").append(clubcode);
+                    $(".act_title:eq("+ String(j) +")").html(acttitle);
+                    $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
+                    $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
+                    $(".act_intro:eq("+ String(j) +")").html(actbrief);
+                    $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
+                    alert("act_id = " + actid);
+                }
+
+            });
 
         });
 
@@ -486,20 +487,21 @@ function begin()
             $(".act_intro:eq("+ String(i) +")").html(actbrief);
             $(".act_logo:eq("+ String(i) +")").attr("src", actlogo);
         }
-    });
 
-    var actlistall = "/activity/list/club/?u_id=" + global_userid;
-    $.getJSON(actlistall ,function(data){
-        for(var i = 0; i < data.length; i++)
-        {
-            var acttitle = data[i].title;
-            var actbrief = data[i].brief;
-            var actlogo = data[i].image_url;
-            $("#modeul").append(clubcode);
-            $(".act_title:eq("+ String(i) +")").html(acttitle);
-            $(".act_intro:eq("+ String(i) +")").html(actbrief);
-            $(".act_logo:eq("+ String(i) +")").attr("src", actlogo);
-        }
+        var actlistall = "/activity/list/club/?u_id=" + global_userid;
+        $.getJSON(actlistall ,function(data){
+            for(var i = 0; i < data.length; i++)
+            {
+                var acttitle = data[i].title;
+                var actbrief = data[i].brief;
+                var actlogo = data[i].image_url;
+                $("#modeul").append(clubcode);
+                $(".act_title:eq("+ String(i) +")").html(acttitle);
+                $(".act_intro:eq("+ String(i) +")").html(actbrief);
+                $(".act_logo:eq("+ String(i) +")").attr("src", actlogo);
+            }
+        });
+
     });
 }
 
@@ -954,10 +956,9 @@ function initAllinfo()
         dataType: 'text',
         success: function(data) {
             allinfocode = data;
+            var allinfoadd = "/news/list/school/?code=" + gloabl_code;
         }
     });
-
-    var allinfoadd = "/news/list/school/?code=" + gloabl_code;
 
 
     //user userlistfolloadd replace
@@ -1067,10 +1068,9 @@ function manageFriend()
         dataType: 'text',
         success: function(data) {
             friendlistcode = data;
+            var userlistfolloadd = "/user/list/following/?u_id=" + global_userid;
         }
     });
-
-    var userlistfolloadd = "/user/list/following/?u_id=" + global_userid;
             // use userlistfolloadd replace
     $.getJSON(userlistfolloadd ,function(data){
         for(var i = 0; i < data.length; i++)
@@ -1254,13 +1254,14 @@ function loadactivity()
         for (var i=0; i<data.length; i++) {
             e.options.add(new Option(data[i].title, data[i].id)); // value not sure
         }
-    });
 
-    var loadactivityadd = "/activity/list/create/?u_id=" + global_userid;
-    $.getJSON(loadactivityadd ,function(data){
-        for (var i=0; i<data.length; i++) {
-            e.options.add(new Option(data[i].title, data[i].id)); // value not sure
-        }
+        var loadactivityadd = "/activity/list/create/?u_id=" + global_userid;
+        $.getJSON(loadactivityadd ,function(data){
+            for (var i=0; i<data.length; i++) {
+                e.options.add(new Option(data[i].title, data[i].id)); // value not sure
+            }
+        });
+
     });
 }
 
@@ -1276,13 +1277,14 @@ function loadclubname()
         for (var i=0; i<data.length; i++) {
             e.options.add(new Option(data[i].club_name, data[i].club_id)); // value not sure
         }
-    });
 
-    var loadclubadd = "/club/list/join/?u_id=" + global_userid;
-    $.getJSON(loadclubadd ,function(data){
-        for (var i=0; i<data.length; i++) {
-            e.options.add(new Option(data[i].club_name, data[i].club_id)); // value not sure
-        }
+        var loadclubadd = "/club/list/join/?u_id=" + global_userid;
+        $.getJSON(loadclubadd ,function(data){
+            for (var i=0; i<data.length; i++) {
+                e.options.add(new Option(data[i].club_name, data[i].club_id)); // value not sure
+            }
+        });
+
     });
 }
 
