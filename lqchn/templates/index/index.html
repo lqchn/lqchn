@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>主页</title>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge">
+    <meta charset="UTF-8">
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="/static/bootstrap-3.2.0/dist/css/bootstrap.css">
+    <!--jquery-->
+    <script src="/static/jquery-2.1.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="/static/bootstrap-3.2.0/dist/js/bootstrap.js"></script>
+    <script src="/static/less-1.7.1.min.js"></script>
+
+    <!--self css file-->
+    <link rel="stylesheet" href="/static/css/index/index.css">
+    <!--self js file-->
+    <script src="/static/js/index/index.js"></script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top transparent_class" role="navigation">
+    <div class="container-fluid">
+        <!--put brand and toggle together-->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/index/">在这里放图标logo</a>
+        </div>
+        <!--other model link-->
+        <div class="collapse navbar-collapse navbar-left">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#" id="activity">活动</a></li>
+                <li class=""><a href="#" id="club">社团</a></li>
+                <li class=""><a href="#" id="journal">日志</a></li>
+                <li class=""><a href="#" id="request">广场</a></li>
+            </ul>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="school-name">选择学校<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" class="">陕西省</a> </li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="">西安市</a> </li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="">西安电子科技大学</a> </li>
+                    </ul>
+                </li>
+                <li class="nav-list-img">
+                    <a href="/pages/" class="user_main" target="_blank">
+                        <img src="/media/html_image/index/profile.jpg" height="30px" width="30px" class="img-circle" id="u_photo">
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/" class="u_name" target="_blank">name</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="/media/html_image/index/carousel-2.jpg" width="100%" id="carousel1">
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <div class="item">
+            <img src="/media/html_image/index/carousel-1.jpg" width="100%" id="carousel2">
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <div class="item">
+            <img src="/media/html_image/index/carousel-3.jpg" width="100%" id="carousel3">
+            <div class="carousel-caption">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-warning alert-dismissible warnning" role="alert" id="alert" hidden="hidden">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <strong>提醒!</strong> 为了更好的体验，请先选择您的学校信息。
+</div>
+
+<!---------------------------------------------activity------------------------------------------------->
+<div class="modeul-main activity">
+    <h1 class="activity-title">活动<small>走出房间，拥抱青春</small></h1>
+    <div class="row main">
+        <div class="col-md-6">
+            <ul class="nav nav-pills rank-left" role="tablist">
+                <li class="rank-link-left"><a href="#" class="rl-active-color">按热度</a></li>
+                <li class="rank-link-left"><a href="#" class="rl-unactive-color">按时间</a></li>
+                <li class="rank-link-left"><a href="#" class="rl-unactive-color">按类别</a></li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul class="nav nav-pills rank-right" role="tablist">
+                <li class="rank-link-right"><a href="#" class="rl-unactive-color">推荐</a></li>
+                <li class="rank-link-right"><a href="#" class="rl-active-color">全部</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--first line-->
+    <div class="row row-activity main">
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--second line-->
+    <div class="row row-activity main">
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--third line-->
+    <div class="row row-activity main">
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--page control-->
+    <ul class="pager">
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+    </ul>
+
+    <div class="row main advertisement">
+
+    </div>
+
+</div>
+
+<!---------------------------------------------club------------------------------------------------->
+<div class="modeul-main club" hidden="hidden">
+    <h1 class="club-title">俱乐部<small>让生活更加新鲜</small></h1>
+    <div class="row main search">
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div><!-- /input-group -->
+        </form>
+    </div>
+
+    <!----------------first line----------------->
+    <div class="row row-club main">
+        <div class="col-md-2">
+            <div class="club-container">
+                <div class="club-logo">
+                    <img src="/media/html_image/index/profile.jpg" width="120px" height="120px" class="img-circle">
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="club-container">
+                <div class="club-info">
+                    <a href="#" class="name" target="_blank">机器人俱乐部</a>
+                    <a href="#" class="intro" target="_blank">智能机器人之所以叫智能机器人，这是因为它有相当发达的“大脑”。在脑中起作用的是中央处理器，这种计算机跟操作它的人有直接的联系。最主要的是，这样的计算机可以进行按目的安排的动作。正因为这样，我们才说这种机器人才是真正的机器人，尽管它们的外表可能有所不同。在脑中起作用的是中央处理器，这种计算机跟操作它的人有直接的联系。最主要的是，这样的计算机可以进行按目的安排的动作。正因为这样，我们才说这种机器人才是真正的机器人，尽管它们的外表可能有所不同。</a>
+                </div>
+            </div>
+        </div>
+        <div style="height: 45px;padding-top: 10px;">
+            <div class="row club-record">
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-user c-number">&nbsp39</span>
+                </div>
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-eye-open c-views">&nbsp3091</span>
+                </div>
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-thumbs-up c-favor">&nbsp1024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------second line----------------->
+    <div class="row row-club main">
+        <div class="col-md-2">
+            <div class="club-container">
+                <div class="club-logo">
+                    <img src="/media/html_image/index/profile.jpg" width="120px" height="120px" class="img-circle">
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="club-container">
+                <div class="club-info">
+                    <a href="#" class="name" target="_blank">机器人俱乐部</a>
+                    <a href="#" class="intro" target="_blank">智能机器人之所以叫智能机器人，这是因为它有相当发达的“大脑”。在脑中起作用的是中央处理器，这种计算机跟操作它的人有直接的联系。最主要的是，这样的计算机可以进行按目的安排的动作。正因为这样，我们才说这种机器人才是真正的机器人，尽管它们的外表可能有所不同。在脑中起作用的是中央处理器，这种计算机跟操作它的人有直接的联系。最主要的是，这样的计算机可以进行按目的安排的动作。正因为这样，我们才说这种机器人才是真正的机器人，尽管它们的外表可能有所不同。</a>
+                </div>
+            </div>
+        </div>
+        <div style="height: 45px;padding-top: 10px;">
+            <div class="row club-record">
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-user c-number">&nbsp39</span>
+                </div>
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-eye-open c-views">&nbsp3091</span>
+                </div>
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-thumbs-up c-favor">&nbsp1024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------third line----------------->
+    <div class="row row-club main">
+        <div class="col-md-2">
+            <div class="club-container">
+                <div class="club-logo">
+                    <img src="/media/html_image/index/profile.jpg" width="120px" height="120px" class="img-circle">
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="club-container">
+                <div class="club-info">
+                    <a href="#" class="name" target="_blank">机器人俱乐部</a>
+                    <a href="#" class="intro" target="_blank">。正因为这样，我们才说这种机器人才是真正的机器人，尽管它们的外表可能有所不同。</a>
+                </div>
+            </div>
+        </div>
+        <div style="height: 45px;padding-top: 10px;">
+            <div class="row club-record">
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-user c-number">&nbsp39</span>
+                </div>
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-eye-open c-views">&nbsp3091</span>
+                </div>
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-thumbs-up c-favor">&nbsp1024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--page control-->
+    <ul class="pager">
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+    </ul>
+
+    <div class="row main advertisement">
+
+    </div>
+</div>
+
+<!---------------------------------------------journal------------------------------------------------->
+<div class="modeul-main journal" hidden="hidden">
+    <div class="row row-journal main">
+        <h1 class="journal-title">活动日志<small>记录美的瞬间</small></h1>
+        <div class="col-md-3 journal-menu">
+            <!--collapse of type-->
+            <ul class="nav nav-pills nav-stacked" role="tablist">
+                <!--type 1-->
+                <li class="active">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#type1">
+                        <span class="badge pull-right" id="sports">31</span>
+                        户外运动
+                    </a>
+                    <ul class="nav nav-pills nav-stacked collapse" role="tablist" id="type1">
+
+                    </ul>
+                </li>
+
+                <!--type 2-->
+                <li class="">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#type2">
+                        <span class="badge pull-right" id="social">12</span>
+                        社会服务
+                    </a>
+                    <ul class="nav nav-pills nav-stacked collapse" role="tablist" id="type2">
+
+                    </ul>
+                </li>
+
+                <!--type 3-->
+                <li class="">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#type3">
+                        <span class="badge pull-right" id="chinese">28</span>
+                        文学交流
+                    </a>
+                    <ul class="nav nav-pills nav-stacked collapse" role="tablist" id="type3">
+
+                    </ul>
+                </li>
+
+                <!--type 4-->
+                <li class="">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#type4">
+                        <span class="badge pull-right" id="art">16</span>
+                        艺术活动
+                    </a>
+                    <ul class="nav nav-pills nav-stacked collapse" role="tablist" id="type4">
+
+                    </ul>
+                </li>
+
+                <!--type 5-->
+                <li class="">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#type5">
+                        <span class="badge pull-right" id="special">25</span>
+                        特色活动
+                    </a>
+                    <ul class="nav nav-pills nav-stacked collapse" role="tablist" id="type5">
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <div class="col-md-9 journal-body">
+            <p class="j-text-title">罗振宇自述：“逻辑思维”如何24小时售卖800万？</p>
+            <a href="#" class="j-text-activity">罗振宇全国巡讲-西安站</a>
+            <p class="j-text-content">
+
+            </p>
+        </div>
+    </div>
+</div>
+
+<!---------------------------------------------request------------------------------------------------->
+<div class="modeul-main request" hidden="hidden">
+    <h1 class="request-title">广场<small>活动就在身边</small></h1>
+    <div style="padding-top: 20px;padding-bottom: 20px;width: 950px;margin: auto;">
+        <div style="text-align: right">
+            <!-- Button trigger modal -->
+            <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+                创建
+            </button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">大家都不知道我是谁</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form method="post" action="/ground/create/">{% csrf_token %}
+                            <p>发布范围</p>
+                            <input type="text" name="code" id="school_code" hidden="hidden">
+                            <input type="radio" name="type" id="school" value="school">
+                            <span style="padding-left: 5px;">学校</span>
+                            <input type="radio" name="type" id="all" value="all" style="margin-left: 10px">
+                            <span style="padding-left: 5px;">全部</span>
+                            <p>内容</p>
+                            <textarea class="form-control" name="content" rows="3"></textarea>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row main">
+        <div class="col-md-4 rq-modeul">
+
+        </div>
+        <div class="col-md-4 rq-modeul">
+
+        </div>
+        <div class="col-md-4 rq-modeul">
+
+        </div>
+    </div>
+</div>
+
+<!--bottom navigation-->
+<div class="row bottom">
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+body{
+    background-color: #FFF;
+    font-family: Georgia;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 60px;
+    font-weight: normal;
+    margin: 0px;
+    font-family: 'Chelsea Market', Georgia, serif;
+    color: #000;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 70px;
+    font-weight: normal;
+    margin: 0;
+    color: #FFB000;
+    font-family: 'Chelsea Market', Georgia, serif;
+    text-transform: lowercase;
+}
+
+h3 {
+    font-size: 40px;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 40px;
+    text-transform: lowercase;
+}
+
+p {
+    width: 960px;
+    margin: 40px auto;
+    color: #000;
+    line-height: 200%;
+}
+
+a{
+    width: 960px;
+    margin: 40px auto;
+    color: #000;
+    line-height: 200%;
+}
+
+a:hover{
+    color: #000;
+}
+
+/* title */
+.block-title{
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.block-title h1{
+    padding-top: 50px;
+}
+
+.block-title .contact{
+    font-size: 14px;
+    color: #333;
+}
+
+.block-title .meta{
+    line-height: 60%;
+    font-size: 16px;
+    color: #999;
+}
+
+.block-title .meta a{
+    font-size: 16px;
+    color: #333;
+}
+
+/* member */
+.block-member{
+    padding-bottom: 100px;
+    background-color: #7c9450;
+    color: #999;
+}
+
+.block-member h1{
+    padding-top: 80px;
+    color: white;
+}
+
+.block-member .meta{
+    background-color:  white;
+    color: #7c9450;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.block-member .indicate{
+    font-size: 18px;
+    color: white;
+}
+
+.block-member .leader{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: lightgray;
+}
+
+.block-member .member{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* activity */
+.block-activity{
+    padding-bottom: 100px;
+    background-color: #F2F2F2;
+}
+
+.block-activity h1{
+    padding-top: 80px;
+    color: #666;
+}
+
+.block-activity .activity{
+    margin-top: 10px;
+}
+
+.block-activity .time{
+    width: 200px;
+    height: 30px;
+    background-color: #666;
+    color: white;
+    margin-bottom: 0px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.block-activity .title{
+    margin-top: 0px;
+    font-size: 28px;
+}
+
+/* journal */
+.block-journal{
+    padding-bottom: 100px;
+    background-color: #348fd4;
+}
+
+.block-journal h1{
+    padding-top: 80px;
+    color: #06406c;
+}
+
+.block-journal .time{
+    background-color: #06406c;
+    color: white;
+    width: 200px;
+    height: 30px;
+    border-radius: 8px;
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+
+.block-journal .title{
+    margin-top: 0px;
+    font-size: 28px;
+}
+
+/*  */
+.block-ad{
+    padding-bottom: 100px;
+    background-color: #ffc19f;
+}
+
+.block-ad h1{
+    padding-top: 80px;
+    color: #cc4037;
+}
+
+.block-ad .meta{
+    color: #7d1f19;
+}
+
+.block-ad .name{
+    color: #cc4037;
+}
+
+/*  */
+.block-comment{
+    height: 1000px;
+}
+
+.block-comment h1{
+    padding-top: 80px;
+    padding-bottom: 100px;
+
+}
+
+.block-comment p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+
+.block-comment a{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 14px;
+}

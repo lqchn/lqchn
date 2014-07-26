@@ -1,0 +1,133 @@
+<div class="row main" id="rank">
+        <div class="col-md-6">
+            <ul class="nav nav-pills rank-left" role="tablist">
+                <li class="rank-link-left"><a href="#" class="rl-active-color">按热度</a></li>
+                <li class="rank-link-left"><a href="#" class="rl-unactive-color">按时间</a></li>
+                <li class="rank-link-left"><a href="#" class="rl-unactive-color">按类别</a></li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul class="nav nav-pills rank-right" role="tablist">
+                <li class="rank-link-right"><a href="#" class="rl-unactive-color">推荐</a></li>
+                <li class="rank-link-right"><a href="#" class="rl-active-color">全部</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--first line-->
+    <div class="row row-activity main">
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--second line-->
+    <div class="row row-activity main">
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--third line-->
+    <div class="row row-activity main">
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 activity-modeul">
+            <div class="ac-container">
+                <div class="ac_img">
+                    <img src="" height="240px" width="440px" class="ac_image">
+                </div>
+                <div class="ac_intro transparent_class" hidden="hidden">
+                    <p class="ac_title">汽车人之战</p>
+                    <p class="ac_brief">简单的介绍一下汽车人之战</p>
+                    <div class="ac_record">
+                        <span class='glyphicon glyphicon-eye-open'></span><span class="ac_record_views">0</span>
+                        &nbsp&nbsp&nbsp
+                        <span class='glyphicon glyphicon-thumbs-up'></span><span class="ac_record_favor">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--page control-->
+    <ul class="pager">
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+    </ul>
+
+    <div class="row main advertisement">
+
+    </div>

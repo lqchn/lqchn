@@ -1,0 +1,16 @@
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="image/f2.jpeg" class="img-circle" style="width:50px; height:50px; margin-left:20px;margin-top: 40px;">
+                    </div>
+                    <div class="col-md-10">
+                        <div>
+                            <h3 style="font-weight: lighter">
+                                <a href="#"> Android Baby tell u:</a>
+                            </h3>
+                            <p>
+                                Study English is very easy if you have confidence and you can make everything well.
+                            </p>
+                            <hr />
+                        </div>
+                    </div>
+                </div>

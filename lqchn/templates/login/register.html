@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Register | GreenCircle</title>
+   
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="/static/bootstrap-3.2.0/dist/css/bootstrap.css">
+    <!--jquery-->
+    <script src="/static/jquery-2.1.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="/static/bootstrap-3.2.0/dist/js/bootstrap.js"></script>
+    <script src="/static/less-1.7.1.min.js"></script>
+    
+    <link href="/static/css/login/register.css" rel="stylesheet">
+    <script src="/static/js/login/register.js"></script>
+</head>
+<!--~~~~~~~~~~~~~~~~~~~~This is Register page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<body class="registerBody">
+<div class="register">
+    <h3 class="saying"> 延续青春、放飞梦想 </h3>
+    <h4 class="saying"> The course of true love never did run smooth.</h4>
+    <form role="form" method="post" action="/user/create/"  name="form" id="registerMessage" onsubmit="return check()">
+        <div>
+            <input id="mail" name="un" type="email" class="iE"  placeholder="Enter email">
+        </div>
+        <div>
+            <input name="pw" type="password" maxlength="18" class="iE" placeholder="Password">
+        </div>
+        <div>
+            <input name="nickname" type="text" class="iE" placeholder="User Name">
+        </div>
+        <div>
+            <input name="code" type="text" value="001" hidden="hidden"/>
+        </div>
+        <div>
+            <img id="attention" src="/media/html_image/login/warnning.png" />
+        </div>
+        <div class="sub">
+            <button class="subButton" value="Register" type="submit" class="btn btn-default">
+            Register
+            </button>
+        </div>
+    </form>
+</div>
+<!--~~~~~~~~~~~~~~~~~~~~This is Register page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+</body>
+</html>

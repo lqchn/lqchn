@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>主页</title>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge">
+    <meta charset="UTF-8">
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="/static/bootstrap-3.2.0/dist/css/bootstrap.css">
+    <!--jquery-->
+    <script src="/static/jquery-2.1.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="/static/bootstrap-3.2.0/dist/js/bootstrap.js"></script>
+    <script src="/static/less-1.7.1.min.js"></script>
+
+    <!--self css file-->
+    <link rel="stylesheet" href="/static/css/clubDetail/clubDetail.css">
+    <!--self js file-->
+    <script src="/static/js/clubDetail/clubDetail.js"></script>
+
+    <!--comment css file-->
+    <link rel="stylesheet" href="../comment/comment.css">
+
+</head>
+
+<body>
+
+<div class="block-title">
+    <img src="/media/html_image/index/profile.jpg" class="img-circle" width="200" height="200">
+    <h1 id="name">智能机器俱乐部</h1>
+    <p id="brief">我们是一群热爱机器人的热血青年。</p>
+    <p class="contact" id="contact">联系方式：18671900015</p>
+    <p class="meta" id="c_name">创立者：<a href="#">灯泡</a></p>
+    <p class="meta" id="l_name">现任领导者：<a href="#">灯管</a></p>
+    <p class="meta" id="type">主要范围：<a href="#">户外运动</a></p>
+    <button class="btn btn-success" id="follow">关注我们</button>
+</div>
+
+<div class="block-member">
+    <h1>成员</h1>
+    <p class="meta">活跃成员：26人</p>
+    <p class="indicate">已注册成员</p>
+    <img src="/media/html_image/index/profile.jpg" class="img-circle" width="80" height="80">
+    <p class="leader">灯管</p>
+    <br/>
+    <span class="member">
+        <img src="/media/html_image/index/profile.jpg" class="img-circle" width="80" height="80">
+    </span>
+    <span class="member">
+        <img src="/media/html_image/index/profile.jpg" class="img-circle" width="80" height="80">
+    </span>
+    <span class="member">
+        <img src="/media/html_image/index/profile.jpg" class="img-circle" width="80" height="80">
+    </span>
+    <span class="member">
+        <img src="/media/html_image/index/profile.jpg" class="img-circle" width="80" height="80">
+    </span>
+</div>
+
+<div class="block-activity">
+    <h1>举办的活动</h1>
+
+</div>
+
+<div class="block-journal">
+    <h1>发布的日志</h1>
+</div>
+
+<div class="block-ad">
+    <h1>致谢</h1>
+    <p><span class="meta">感谢</span><span class="name">&nbsp&quot可口可乐公司&quot&nbsp</span><span class="meta">的独家赞助</span></p>
+    <p class="meta">怕上火，喝王老吉！</p>
+</div>
+
+<div class="block-comment">
+
+    <h1>评论</h1>
+    <div id="comment">
+
+    </div>
+
+</div>
+
+<!-----get value from server------>
+<p hidden="hidden" id="c_id">{{c_id}}</p>
+
+
+</body>
+
+</html>

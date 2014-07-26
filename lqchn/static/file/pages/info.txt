@@ -1,0 +1,20 @@
+
+
+<p id="info_name"></p>
+<p id="info_nick"></p>
+<p id="info_sign"></p>
+<p id="info_gender"></p>
+<p id="info_homeland"></p>
+<p id="info_birthday"></p>
+<p id="info_school"></p>
+<p id="info_entrance"></p>
+<p id="info_interest"></p>
+<p id="info_tel"></p>
+<p id="info_qq"></p>
+<p id="info_wechat"></p>
+<p id="info_weibo"></p>
+
+
+<button id="change_info" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1" style="float: right;">
+    修改个人资料
+</button>

@@ -1,0 +1,60 @@
+<div class="row main" id="rank">
+    <div class="col-md-6">
+        <ul class="nav nav-pills rank-left" role="tablist">
+            <li class="rank-link-left"><a href="#" class="rl-active-color">按热度</a></li>
+            <li class="rank-link-left"><a href="#" class="rl-unactive-color">按时间</a></li>
+            <li class="rank-link-left"><a href="#" class="rl-unactive-color">按类别</a></li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <ul class="nav nav-pills rank-right" role="tablist">
+            <li class="rank-link-right"><a href="#" class="rl-unactive-color">推荐</a></li>
+            <li class="rank-link-right"><a href="#" class="rl-active-color">全部</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="row row-club main">
+        <div class="col-md-6 club-modeul">
+            <div class="row club-container">
+                <div class="col-md-4">
+                    <img src="image/falg-1.jpg" class="img-circle club-icon">
+                </div>
+                <div class="col-md-8">
+                    <p class="club-name">美利坚合众国</p>
+                    <p class="club-brief">美国是世界最发达的资本主义国家</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 club-modeul">
+            <div class="club-container"></div>
+        </div>
+    </div>
+
+    <div class="row row-club main">
+        <div class="col-md-6 club-modeul">
+            <div class="club-container"></div>
+        </div>
+        <div class="col-md-6 club-modeul">
+            <div class="club-container"></div>
+        </div>
+    </div>
+
+    <div class="row row-club main">
+        <div class="col-md-6 club-modeul">
+            <div class="club-container"></div>
+        </div>
+        <div class="col-md-6 club-modeul">
+            <div class="club-container"></div>
+        </div>
+    </div>
+
+    <!--page control-->
+    <ul class="pager">
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+    </ul>
+
+    <div class="row main advertisement">
+
+    </div>

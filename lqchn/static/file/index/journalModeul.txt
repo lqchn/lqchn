@@ -1,0 +1,89 @@
+<br/>
+<br/>
+<br/>
+<div class="row row-journal main">
+        <div class="col-md-3 journal-menu">
+            <!--collapse of type-->
+            <ul class="nav nav-pills nav-stacked" role="tablist">
+                <!--type 1-->
+                <li class="active">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#type1">
+                        <span class="badge pull-right">31</span>
+                        户外运动
+                    </a>
+                    <ul class="nav nav-pills nav-stacked collapse" role="tablist" id="type1">
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 1</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 2</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 3</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 4</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 5</a></li>
+                    </ul>
+                </li>
+
+                <!--type 2-->
+                <li class="">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#type2">
+                        <span class="badge pull-right">12</span>
+                        文艺活动
+                    </a>
+                    <ul class="nav nav-pills nav-stacked collapse" role="tablist" id="type2">
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 1</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 2</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 3</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 4</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 5</a></li>
+                    </ul>
+                </li>
+
+                <!--type 3-->
+                <li class="">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#type3">
+                        <span class="badge pull-right">28</span>
+                        表演活动
+                    </a>
+                    <ul class="nav nav-pills nav-stacked collapse" role="tablist" id="type3">
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 1</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 2</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 3</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 4</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 5</a></li>
+                    </ul>
+                </li>
+
+                <!--type 4-->
+                <li class="">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#type4">
+                        <span class="badge pull-right">16</span>
+                        校内赛事
+                    </a>
+                    <ul class="nav nav-pills nav-stacked collapse" role="tablist" id="type4">
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 1</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 2</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 3</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 4</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 5</a></li>
+                    </ul>
+                </li>
+
+                <!--type 5-->
+                <li class="">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#type5">
+                        <span class="badge pull-right">25</span>
+                        其他活动
+                    </a>
+                    <ul class="nav nav-pills nav-stacked collapse" role="tablist" id="type5">
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 1</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 2</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 3</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 4</a></li>
+                        <li><a href="javascript:void(0)" id="jourDetail">journal 5</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <div class="col-md-9 journal-body">
+            <p class="j-text-title">罗振宇自述：“逻辑思维”如何24小时售卖800万？</p>
+          <a href="#" class="j-text-activity">罗振宇全国巡讲-西安站</a>
+        </div>
+    </div>

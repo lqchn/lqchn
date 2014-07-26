@@ -1,0 +1,40 @@
+div, form, div, input, body {
+    padding: 0px;
+    margin: 0px;
+}
+.registerBody {
+    background: url("football.jpg");
+    margin: 0px auto;
+    background-position: center top;
+}
+.register {
+    margin: auto;
+    width: 950px;
+    text-align: center;
+    margin-top: 240px;
+    border: 0px;
+}
+.sub {
+    padding-top: 6px;
+}
+.subButton {
+    background-color: #3399cc;
+    width: 260px;
+    height: 46px;
+    border: 0px;
+    color: white;
+}
+.iE {
+    padding: 5px;
+    width: 260px;
+    height: 46px;
+}
+.saying {
+    color: white;
+}
+#attention {
+    width:255px;
+    height:55px;
+
+}
+

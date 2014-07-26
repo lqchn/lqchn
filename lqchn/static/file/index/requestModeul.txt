@@ -1,0 +1,35 @@
+<br/>
+    <br/>
+    <br/>
+    <div class="row main">
+        <div class="col-md-4 rq-modeul">
+            <div class="rq-main">
+                <div class="rq-user rq-user-face">
+                    <img class="img-circle" src="image/profile.jpg" width="50px" height="50px">
+                </div>
+                <p class="rq-time">2014年7月18日 4:33:17</p>
+                <p class="rq-detail">有人下午想要去打篮球吗？我带球<br/>电话：18671900015</p>
+                <div style="padding-top: 20px;text-align: right">
+                    <a class="">赞</a>
+                    <a class="">回复</a>
+                </div>
+            </div>
+            <div class="rq-main">
+                <div class="rq-user rq-user-face">
+                    <img class="img-circle" src="image/profile.jpg" width="50px" height="50px">
+                </div>
+                <p class="rq-time">2014年7月18日 4:33:17</p>
+                <p class="rq-detail">有人下午想要去打篮球吗？我带球<br/>电话：18671900015</p>
+                <div style="padding-top: 20px;text-align: right">
+                    <a class="">赞</a>
+                    <a class="">回复</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 rq-modeul">
+
+        </div>
+        <div class="col-md-4 rq-modeul">
+
+        </div>
+    </div>

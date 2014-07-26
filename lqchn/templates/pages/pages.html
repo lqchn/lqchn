@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Log in | GreenCircle</title>
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="/static/bootstrap-3.2.0/dist/css/bootstrap.css">
+    <!--jquery-->
+    <script src="/static/jquery-2.1.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="/static/bootstrap-3.2.0/dist/js/bootstrap.js"></script>
+    <script src="/static/less-1.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/pages/style.css" />
+    <script type="text/javascript" src="/static/js/pages/tinyeditor.js"></script>
+    <script src="/static/js/pages/pages.js"></script>
+    <link href="/static/css/pages/pages.css" rel="stylesheet">
+</head>
+
+<body>
+<div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <img src="image/f2.jpeg" class="img-circle" style="width:40px;height:40px; margin-left: 580px;"/>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a id="functionbar" href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a id="writelogbtn" href="#" data-toggle="modal" data-target="#myModal">写日志</a></li>
+                            <li><a id="createclubbtn" href="#" data-toggle="modal" data-target="#myModal2">创建社团</a></li>
+                            <li><a id="createactbtn" href="#" data-toggle="modal" data-target="#myModal3">创建活动</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-toggle="modal" data-target="#myModal4" id="managefriendbtn">好友管理</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#myModal5" id="manageactivitybtn">活动管理</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+<!------------------------------ Tiny Editor parts--------------------------------------->
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                <h4 class="modal-title" id="myModalLabel">Record your log</h4>
+            </div>
+            <div class="modal-body">
+                <div class="teditor">
+                    <form class="form-horizontal" role="form" method="post" name="form" id="form" action="http://192.168.1.107:8080/journal/create/" enctype="multipart/form-data" onsubmit="return check()">
+                        <div id="tinywarnning" class="alert alert-danger" role="alert" hidden="hidden">请完善所须的资料</div>
+
+
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="chooseactivityname">选择活动:</label>
+                            <select name="a_id" id="chooseactivityname">
+
+                            </select>
+                        </div>
+
+
+                        <div class="form-group form-group-sm">
+                            <div style="width: 280px;" class="col-md-6">
+                                <input name="image1" id="choosepic1" type="file" accept="image/*" value="picture" onclick="shownext1()"/>
+                            </div>
+                            <div style="width: 280px;" class="col-md-6">
+                                <input type="button" id="btn1" value="delete" onclick="cancel1();" />
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm" hidden="hidden" id="choosepart2">
+                            <div style="width: 280px;" class="col-md-6">
+                                <input name="image2" id="choosepic2" type="file" accept="image/*" value="picture" onclick="shownext2()"/>
+                            </div>
+                            <div style="width: 280px;" class="col-md-6">
+                                <input type="button" id="btn2" value="delete" onclick="cancel2();" />
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm" hidden="hidden" id="choosepart3">
+                            <div style="width: 280px;" class="col-md-6">
+                                <input name="image3" id="choosepic3" type="file" accept="image/*" value="picture" onclick="shownext3()"/>
+                            </div>
+                            <div style="width: 280px;" class="col-md-6">
+                                <input type="button" id="btn3" value="delete" onclick="cancel3();" />
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm" hidden="hidden" id="choosepart4">
+                            <div style="width: 280px;" class="col-md-6">
+                                <input name="image4" id="choosepic4" type="file" accept="image/*" value="picture" onclick="shownext4()"/>
+                            </div>
+                            <div style="width: 280px;" class="col-md-6">
+                                <input type="button" id="btn4" value="delete" onclick="cancel4();" />
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm" hidden="hidden" id="choosepart5">
+                            <div style="width: 280px;" class="col-md-6">
+                                <input name="image5" id="choosepic5" type="file" accept="image/*" value="picture"/>
+                            </div>
+                            <div style="width: 280px;" class="col-md-6">
+                                <input type="button" id="btn5" value="delete" onclick="cancel5();" />
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="author">作者:</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" id="author" name="author" style="width: 130px;">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="editor">编辑:</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" id="editor" name="editor" style="width: 130px;">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="logtitle">标题:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="j_t" class="form-control" id="logtitle" placeholder="vivid life.....">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <div class="col-sm-10">
+                                <textarea id="input" name="j_c" style="width:400px; height:200px"></textarea>
+                            </div>
+                        </div>
+
+
+                        <script type="text/javascript">
+                            new TINY.editor.edit('editor',{
+                                id:'input',
+                                width:520,
+                                height:175,
+                                cssclass:'te',
+                                controlclass:'tecontrol',
+                                rowclass:'teheader',
+                                dividerclass:'tedivider',
+                                controls:['bold','italic','underline','|',
+                                    'outdent','indent','|','leftalign',
+                                    'centeralign','rightalign','blockjustify','|','unformat','|','undo','redo','n',
+                                    'size','|','hr','|'],
+                                footer:true,
+                                fonts:['Verdana','Arial','Georgia','Trebuchet MS'],
+                                xhtml:true,
+                                cssfile:'style.css',
+                                bodyid:'editor',
+                                footerclass:'tefooter',
+                                toggle:{text:'source',activetext:'wysiwyg',cssclass:'toggle'},
+                                resize:{cssclass:'resize'}
+                            });
+                        </script>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button id="logsubmit" type="submit" class="btn btn-primary" onclick="return check()">发布日志</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------ Tiny Editor part--------------------------------------->
+
+<!------------------------------Edit Information part----------------------------------->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                <h4 class="modal-title" id="myModalLabel1">修改资料</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" name="form1" id="form1" action="http://192.168.1.107:8080/user/update/" method="post" enctype="multipart/form-data" onsubmit="return checkInfo()">
+
+                    <div id="editwarnning" class="alert alert-danger" role="alert" hidden="hidden">请完善所需的所有资料</div>
+
+                    <input id="editinfoid" type="text" name="id" hidden="hidden" /> <!-- hidden user id -->
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="chooseuserphoto">头像:</label>
+                        <div class="col-sm-10">
+                            <input name="photo" id="chooseuserphoto" type="file" accept="image/*"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="inputName1">姓名:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="inputName1" name="name" style="width: 130px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="inputNickName">*昵称:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="inputNickName" name="nickname" style="width: 130px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="inputSign">签名:</label>
+                        <div class="col-sm-10">
+                            <textarea name="sign" class="form-control" id="inputSign" rows="5" maxlength="35"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">性别:</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input class="form-control" type="radio" name="sex" id="inlineRadio1" value="male"> 男
+                            </label>
+                            <label class="radio-inline">
+                                <input class="form-control" type="radio" name="sex" id="inlineRadio2" value="famale"> 女
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="province">家乡:</label>
+                        <div class="col-sm-10">
+                            <select id="province" name="province" onchange="cityName(this.value);">
+                                <option>
+                                    请选择省名
+                                </option>
+                            </select>
+                            <select id="city" name="city">
+                                <option>
+                                    请选择城市名
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="year">生日:</label>
+                        <div class="col-sm-10">
+                            <select id="year" name="year" onchange="monthName(this.value);">
+                                <option>
+                                    请选择年
+                                </option>
+                            </select>
+                            <select id="month" name="month" onchange="dayName(this.value);">
+                                <option>
+                                    请选择月
+                                </option>
+                            </select>
+                            <select id="day" name="day">
+                                <option>
+                                    请选择日
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="schoolpro">*学校:</label>
+                        <div class="col-sm-10">
+                            <select id="schoolpro" name="schoolpro" onchange="schoolName(this.value);">
+                                <option>
+                                    请选择省名
+                                </option>
+                            </select>
+                            <select id="university" name="code">
+                                <option>
+                                    请选择学校
+                                </option>
+                            </select>
+                            <select id="dateday" name="entrance">
+                                <option>
+                                    请选择入学年份
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="inputSign">兴趣爱好:</label>
+                        <div class="col-sm-10">
+                            <select id="interest" name="interest">
+                                <option>请选择爱好</option>
+                                <option value="01">户外运动</option>
+                                <option value="02">社会服务</option>
+                                <option value="03">文学</option>
+                                <option value="04">艺术</option>
+                                <option value="05">电子竞技</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div id="phonenum" class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="inputPhoneNum">电话:</label>
+                        <div class="col-sm-10">
+                            <input name="tel" class="form-control" type="text" id="inputPhoneNum" style="width: 130px;" maxlength="11">
+                        </div>
+                    </div>
+
+                    <div id="qqnum" class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="inputQQ">QQ:</label>
+                        <div class="col-sm-10">
+                            <input name="qq" class="form-control" type="text" id="inputQQ" style="width: 130px;" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="inputWechat">微信:</label>
+                        <div class="col-sm-10">
+                            <input name="wechat" class="form-control" type="text" id="inputWechat" style="width: 130px;">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="inputWeibo">微博:</label>
+                        <div class="col-sm-10">
+                            <input name="weibo" class="form-control" type="text" id="inputWeibo" style="width: 130px;">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p style="float: left">*为必选项</p>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary" onclick="return checkInfo();">保存</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------------------------Edit Information part----------------------------------->
+
+<!------------------------------Create Club part----------------------------------------->
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel2">创建社团</h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form" name="form2" id="form2" method="post" action="http://192.168.1.107:8080/club/create/" enctype="multipart/form-data" onsubmit="return checkclub()">
+
+                    <div id="clubwarnning" class="alert alert-danger" role="alert" hidden="hidden">请完善所需的所有资料</div>
+
+                    <input id="createclubuserid" name="u_id" type="text"  hidden="hidden" /> <!-- hidden create club user id-->
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="chooseclubpic">logo:</label>
+                        <div class="col-sm-10">
+                            <input name="logo" id="chooseclubpic" type="file" accept="image/*"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="clubname">社团名称:</label>
+                        <div class="col-sm-10">
+                            <input name="club_name" class="form-control" type="text" id="clubname" style="width: 400px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="clubintroduction">社团简介:</label>
+                        <div class="col-sm-10">
+                            <textarea name="club_intro" class="form-control" id="clubintroduction" rows="4" style="width: 400px;"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="actnum">活跃人数:</label>
+                        <div class="col-sm-10">
+                            <input name="numMembers" class="form-control" type="text" id="actnum" style="width: 400px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="clubintroduction">创始人姓名:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="c_name" class="form-control" id="beginname"  style="width: 400px;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="clubcomm">联系电话:</label>
+                        <div class="col-sm-10">
+                            <input name="club_tel" class="form-control" type="text" id="clubcomm" style="width: 400px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="clubemail">联系邮箱:</label>
+                        <div class="col-sm-10">
+                            <input name="club_email" class="form-control" type="text" id="clubemail" style="width: 400px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="type">社团类型:</label>
+                        <div class="col-sm-10">
+                            <select id="type" name="club_type">
+                                <option value="1">户外运动</option>
+                                <option value="2">社会服务</option>
+                                <option value="3">文学类</option>
+                                <option value="4">艺术类</option>
+                                <option value="5">特色类</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <p style="float: left"> *以上均为必选项 </p>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary" onclick="return checkclub()">提交</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!------------------------------Create Club part----------------------------------------->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~Crate activity part~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="modal-nav-title">基本资料（1/4）</h4>
+            </div>
+            <div class="modal-body">
+                <div class="main_body">
+                    <form class="form-horizontal" id="createActivity" role="form" action="http://192.168.1.107:8080/activity/create/" enctype="multipart/form-data" method="post">
+                        <div class="modul_basic" hidden="hidden">
+
+                            <div class="form-group form-group-sm">
+                                <label class="col-sm-2 control-label" for="c_id">所属社团:</label>
+                                <div class="col-sm-10">
+                                    <select id="c_id" name="c_id">
+                                        <option>请选择社团</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-4 control-label">活动名称</label>
+                                <div class="col-sm-6">
+                                    <input name="title" type="text" class="form-control" id="inputName" placeholder="活动名称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-4 control-label">活动地点</label>
+                                <div class="col-sm-6">
+                                    <input name="place" type="text" class="form-control" id="inputPlace" placeholder="活动地点">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputHost" class="col-sm-4 control-label">主办单位</label>
+                                <div class="col-sm-6">
+                                    <input name="host" type="text" class="form-control" id="inputHost" placeholder="主办单位">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUndertake" class="col-sm-4 control-label">承办单位</label>
+                                <div class="col-sm-6">
+                                    <input name="undertake" type="text" class="form-control" id="inputUndertake" placeholder="承办单位">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputTime" class="col-sm-4 control-label">活动时间</label>
+                                <div class="col-sm-6">
+                                    <input name="time" type="text" class="form-control" id="inputTime" placeholder="活动时间">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputType" class="col-sm-4 control-label">活动范围</label>
+                                <div class="col-sm-6">
+                                    <input name="area" type="text" class="form-control" id="inputType" placeholder="活动范围">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputTel" class="col-sm-4 control-label">联系电话</label>
+                                <div class="col-sm-6">
+                                    <input name="tel" type="text" class="form-control" id="inputTel" placeholder="联系电话">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail" class="col-sm-4 control-label">联系邮箱</label>
+                                <div class="col-sm-6">
+                                    <input name="email" type="text" class="form-control" id="inputEmail" placeholder="联系邮箱">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modul_intro" hidden="hidden">
+                            <div style="padding-left: 15px;padding-bottom: 20px">
+                                <p style="font-weight: bold;">活动海报</p>
+                                <input name="image" type="file" class="" id="inputImage" placeholder="活动海报">
+                            </div>
+                            <br/>
+                            <div class="form-group">
+                                <label for="inputIntro" class="col-sm-2 control-label">活动简介</label>
+                                <div class="col-sm-8">
+                                    <textarea name="brief" class="form-control" id="inputIntro" placeholder="活动简介，用于首页展示。" rows="10"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modul_detail" hidden="hidden">
+                            <div class="form-group">
+                                <label for="inputDetail" class="col-sm-2 control-label">活动详细</label>
+                                <div class="col-sm-12">
+                                    <textarea name="detail" class="form-control" id="inputDetail" placeholder="活动简介，用于首页展示。" rows="15"></textarea>
+                                </div>
+                            </div>
+                            <p style="padding-top: 20px;padding-bottom: 20px;padding-left: 18px">请尽量完善活动的详细介绍。</p>
+                        </div>
+                        <div class="modul_other" hidden="hidden">
+                            <div class="alert alert-danger" id="notFilled" role="alert" hidden="hidden">请填写完成活动的信息！</div>
+                            <div style="padding-left: 15px;padding-bottom: 20px">
+                                <p style="font-weight: bold;">报名须知</p>
+                                <input name="safe_file" type="file" class="" id="inputFile">
+                                <p style="padding-top: 20px">*请提供一份报名须知或免责声明以便参与者预览。</p>
+                            </div>
+                            <div style="padding-left: 15px;padding-bottom: 20px">
+                                <p style="font-weight: bold;">报名人数</p>
+                                <select name="number" class="" id="inputNumber">
+                                    <option value="1">1人</option>
+                                    <option value="2">2人</option>
+                                    <option value="3">3人</option>
+                                    <option value="4">4人</option>
+                                    <option value="5">5人</option>
+                                    <option value="6">6人</option>
+                                    <option value="7">7人</option>
+                                    <option value="8">8人</option>
+                                    <option value="9">9人</option>
+                                    <option value="10">10人</option>
+                                    <option value="11">更多</option>
+                                </select>
+                                <p style="padding-top: 20px">*选择最大报名人数，以便于参与者更好的完善报名表。</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <buttom type="button" class="btn btn-danger" id="modul_prev">上一步</buttom>
+                <button type="button" class="btn btn-primary" id="modul_next">下一步</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!------------------------------Friend Manage part----------------------------------------->
+<!-- Button trigger modal -->
+<!-- Modal -->
+
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel4">好友管理</h4>
+            </div>
+            <div class="modal-body" id="managefriend">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!------------------------------Friend Manage part----------------------------------------->
+
+<!------------------------------Activity Manage part----------------------------------------->
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel5">活动管理</h4>
+            </div>
+            <div class="modal-body" id="manageactivity">
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!------------------------------Activity Manage part----------------------------------------->
+
+<!-----------------------------Club Manage part----------------------------------------------->
+<!-- Button trigger modal -->
+<!-- Modal -->
+
+
+<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel6">编辑社团信息</h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form" name="form3" id="form3" method="post" action="http://192.168.1.107:8080/club/update/" enctype="multipart/form-data" onsubmit="return checkeditclub()">
+
+                    <input type="text" name="c_id" id="clubid" hidden="hidden"/>
+
+                    <div id="editclubwarnning" class="alert alert-danger" role="alert" hidden="hidden">请完善所需的所有资料</div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="chooseclubpic">logo:</label>
+                        <div class="col-sm-10">
+                            <input name="logo" id="editclubpic" type="file" accept="image/*"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="clubname">社团名称:</label>
+                        <div class="col-sm-10">
+                            <input name="club_name" class="form-control" type="text" id="editclubname" style="width: 400px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="clubintroduction">社团简介:</label>
+                        <div class="col-sm-10">
+                            <textarea name="club_intro" class="form-control" id="editclubintroduction" rows="4" style="width: 400px;"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="editclubnum">活跃人数:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="numMembers" class="form-control" id="editclubnum" style="width: 400px;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="clubintroduction">创始人姓名:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="c_name" class="form-control" id="editbeginname" readonly="readonly" style="width: 400px;" />
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="clubcomm">联系电话:</label>
+                        <div class="col-sm-10">
+                            <input name="club_tel" class="form-control" type="text" id="editclubcomm" style="width: 400px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="clubemail">联系邮箱:</label>
+                        <div class="col-sm-10">
+                            <input name="club_email" class="form-control" type="text" id="editclubemail" style="width: 400px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="type">社团类型:</label>
+                        <div class="col-sm-10">
+                            <select id="edittype" name="club_type">
+                                <option value="1">户外运动</option>
+                                <option value="2">社会服务</option>
+                                <option value="3">文学类</option>
+                                <option value="4">艺术类</option>
+                                <option value="5">特色类</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <p style="float: left"> *以上均为必选项(不更改logo则不必上传图片) </p>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button id="editclubbtn" type="submit" class="btn btn-primary" onclick="sendeditclubinfo()">提交</button>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----------------------------Club Manage part----------------------------------------------->
+
+
+<div class="row maindiv">
+    <div class="col-md-2 leftpart">
+        <div class="userinfo">
+            <img id="user_photo" class="img-circle userphoto" src="image/f1.jpg" />
+            <h4 id="user_name" style="text-align: center"></h4>
+            <p id="user_sign" style="font-weight: lighter; text-align: center; color: #ffffff; padding: 18px;">
+
+            </p>
+            <a href="#" class="folbut" style="color: #ffffff;" id="attfriend" >关注</a>
+        </div>
+        <div class="showinfo">
+            <div class="userpicture">
+                <span> <img id="logpic1" class="img-thumbnail" style="width:130px;height:104px;float:left;"/> </span>
+                <span> <img id="logpic2" class="img-thumbnail" style="width:80px;height:104px;float:right;"/> </span>
+                <span> <img id="logpic3" class="img-thumbnail" style="width:80px;height:104px;float:left;"/> </span>
+                <span> <img id="logpic4" class="img-thumbnail" style="width:130px;height:104px;float:right;"/> </span>
+            </div>
+        </div>
+        <div class="personinfo">
+            <h4 style="font-weight: lighter; text-align: center; color: #ffffff;" id="pn">Phone Number:<br/>  </h4>
+            <h4 style="font-weight: lighter; text-align: center; color: #ffffff;" id="fe">Favorite:<br/> </h4>
+            <h4 style="font-weight: lighter; text-align: center; color: #ffffff;" id="bd">Birthdate:<br/> </h4>
+            <h4 style="font-weight: lighter; text-align: center; color: #ffffff;" id="qq">QQ:<br/> </h4>
+            <h4 style="font-weight: lighter; text-align: center; color: #ffffff;" id="wc">WeChat:<br/> </h4>
+        </div>
+    </div>
+
+    <div class="col-md-7 midpart">
+        <div class="midbody">
+            <div class="tabpage">
+
+                <span style="height:180px;">
+                    <a id="act" href="#" class="tag"> Activity </a>
+                </span>
+                <span>
+                    <a id="club" href="#" class="tag"> Club </a>
+                </span>
+                <span>
+                    <a id="info" href="#" class="tag"> Info </a>
+                </span>
+                <span>
+                    <a id="com" href="#" class="tag"> Comment </a>
+                </span>
+            </div>
+
+            <div id="modeul" class="activity" style="border: 0; overflow: auto; overflow-x: hidden;">
+                <!--txt part-->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 rightpart" >
+
+        <div id="allinfo" style="height: 400px; background-color: #FFFCF5; overflow: auto;">
+
+
+
+        </div>
+
+        <div id="friendlist" style="height: 350px; background-color: #FFFCF5">
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+    <!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录 | 绿圈</title>
+    
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="/static/bootstrap-3.2.0/dist/css/bootstrap.css">
+    <!--jquery-->
+    <script src="/static/jquery-2.1.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="/static/bootstrap-3.2.0/dist/js/bootstrap.js"></script>
+    <script src="/static/less-1.7.1.min.js"></script>
+
+    <link href="/static/css/login/login.css" rel="stylesheet">
+    <script src="/static/js/login/login.js"></script>
+
+</head>
+<body class="loginBody">
+<!--~~~~~~~~~~~~~~~~~~~~This is Log in page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<div>
+<div class="login">
+    <h3 class="saying"> 延续青春、放飞梦想 </h3>
+    <h4 class="saying"> The course of true love never did run smooth.</h4>
+    <form role="form" method="post" action="/user/login/" name="form" id="loginMessage" class="confirm" onsubmit="return check()">
+        <div>
+            <input id="mail" name="un" type="email" class="iE"  placeholder="Enter email" />
+        </div>
+        <div>
+            <input name="pw" maxlength="18" type="password" class="iE" placeholder="Password" />
+        </div>
+        <div>
+            <img id="attention" src="/media/html_image/login/warnning.png" />
+        </div>
+        <div id="buttonDiv" class="sub">
+            <button type="submit" id="loginButton" class="subButton" onclick="return check()">
+            Log in
+            </button>
+        </div>
+    </form>
+</div>
+<!--~~~~~~~~~~~~~~~~~~~~This is Log in page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<div >
+    <div class="toRegister">
+        <a href="/register/" style="color:white;">Register</a>
+    </div>
+    <footer class="footPrivacy">
+        <a href="http://www.baidu.com" style="color:white;">Privacy</a>
+    </footer>
+    <footer class="footTerms">
+        <a href="http://www.sina.com" style="color:white;">Terms</a>
+    </footer>
+    <div class="blogNum">
+        <h3 class="number">&nbsp;&nbsp;195.1</h3>
+        <p class="unit">million blogs</p>
+    </div>
+    <div class="postNum">
+        <h3 class="number">&nbsp;&nbsp;83.1</h3>
+        <p class="unit">billion posts</p>
+    </div>
+    <div class="second">
+        <h3 class="number">&nbsp;&nbsp;&nbsp;&nbsp;30</h3>
+        <p class="unit">seconds to join</p>
+    </div>
+</div>
+</div>
+</body>
+</html>

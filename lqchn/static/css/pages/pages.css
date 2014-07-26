@@ -1,0 +1,101 @@
+div, p, span, ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+.maindiv {
+    margin-left: 100px;
+}
+.leftpart {
+    margin-left: 50px;
+    margin: 0px;
+    padding: 0px;
+    height: 750px;
+}
+.midpart {
+    margin: 0px;
+    padding: 0px;
+    background-color: #F3EFE5;
+    height: 750px;
+}
+.rightpart {
+    margin: 0px;
+    padding: 0px;
+    height: 750px;
+}
+.userinfo {
+    height: 295px;
+    background-color: #81A9CA;
+}
+.showinfo {
+    height: 220px;
+    background-color: lavender;
+}
+.personinfo {
+    height: 225px;
+    background-color: #81A9CA;
+}
+
+
+
+.userphoto {
+    margin-left:70px;
+    weight: 80px;
+    height: 80px;
+}
+.folbut {
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+    background-color: #6D95B6;
+    margin-left: 60px;
+}
+.tag {
+    text-decoration:none;
+    color: darkgray;
+    font-weight: lighter;
+    font-size: 35px;
+    margin-left: 40px;
+}
+.tabpage {
+    background-color: #FFFCF5;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 70px;
+}
+a:hover {
+    text-decoration: none;
+    color: red;
+}
+a:link {
+    color: blue;
+}
+.activity {
+    background-color: #FFFCF5;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 640px;
+    width: 680px;
+}
+.actinfo {
+    padding: 0px;
+    margin: 0px;
+    width: 562px;
+}
+.actphoto {
+    padding: 0px;
+    margin: 0px;
+    margin-left: 16px;
+}
+
+.iE {
+    padding: 5px;
+    width: 260px;
+    height: 46px;
+}

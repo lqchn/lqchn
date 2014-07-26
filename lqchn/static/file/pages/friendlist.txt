@@ -1,0 +1,5 @@
+            <a class=frph href="#"><img class="img-circle friendphoto" src="" /></a>
+            <a class="friendnickname" href="#"></a>
+            <a class="friendname" href="#"></a><br/>
+
+

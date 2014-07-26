@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="actphoto col-md-2">
+        <img class="act_logo" src="" class="img-circle" style="width:50px; height:50px; margin-left:20px;margin-top: 20px;">
+    </div>
+
+    <div class="actinfo col-md-10">
+        <h4 style="font-weight: lighter">
+            <a class="act_title"></a>
+            <p class="act_intro">
+
+            </p>
+        </h4>
+        <hr />
+    </div>
+</div>

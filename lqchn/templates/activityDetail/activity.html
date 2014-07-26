@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Activity In</title>
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="/static/bootstrap-3.2.0/dist/css/bootstrap.css">
+    <!--jquery-->
+    <script src="/static/jquery-2.1.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="/static/bootstrap-3.2.0/dist/js/bootstrap.js"></script>
+    <script src="/static/less-1.7.1.min.js"></script>
+
+    <link href="/static/css/activityDetail/activity.css" rel="stylesheet">
+    <script src="/static/js/activityDetail/activity.js"></script>
+</head>
+<body>
+    <p id="hideaid" hidden="hidden">{{a_id}} </p>
+    <div class="clubinfo bodyuse">
+        <img id="clubphoto" class="img-circle" />
+        <p id="clubname" class="puse" > 户外运动俱乐部 </p>
+        <h3 id="acttitle" class="h3use"> 骑行西藏、洗涤朝圣 </h3>
+        <button id="joinclub" class="btn btn-success">关注我们</button>
+        <button id="singlesignup" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">个人报名</button>
+        <button id="groupsignup" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">团队报名</button>
+    </div>
+
+    <div class="actinfo bodyuse">
+        <h1 id="act" class="h1use">活动简介 </h1>
+        <p id="acttype" class="puse">活动类型：体育竞技</p> <!-- null -->
+        <p id="acttime" class="puse"> 活动时间： 2014-08-25 08:00 至 2014-08-28 00:00 </p>
+        <p id="actarea" class="puse">活动范围： 全国</p>
+        <p id="actloc" class="puse">活动地点：武汉市洪山体育馆</p>
+        <p id="acthost" class="puse">主办单位：校导网</p>
+        <p id="actvicehost" class="puse">承办单位：学生社团发展研究中心</p>
+    </div>
+
+    <div class="detailinfo bodyuse">
+        <h1 class="h1use">活动详情</h1>
+        <p id="actdetail" class="puse" style=" margin: 0px; text-align: center; margin-left: 15%;">
+
+        </p>
+    </div>
+
+    <div class="comment bodyuse">
+
+    </div>
+
+    <div class="ad bodyuse">
+        <h1> Channel your best choice </h1>
+    </div>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Single Sign up part~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">个人报名参加</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" role="form" name="form" id="form" method="post" action="http://192.168.1.107:8080/activity/enroll/single/" onsubmit="return checkSingle()">
+                        <div id="singlewarnning" class="alert alert-danger" role="alert" hidden="hidden">请填写所有必须信息，并详细阅读须知。</div>
+
+                        <input type="text" value="1" name="a_id" hidden="hidden"/>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="grade">年级:</label>
+                            <div class="col-sm-10">
+                                <select id="grade" name="grade">
+                                    <option value="1">大学一年级</option>
+                                    <option value="2">大学二年级</option>
+                                    <option value="3">大学三年级</option>
+                                    <option value="4">大学四年级</option>
+                                    <option value="5">研究生及以上</option>
+                                    <option value="6">其他</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="singlename">姓名:</label>
+                            <div class="col-sm-10">
+                                <input name="name" class="form-control" type="text" id="singlename" style="width: 200px;">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="singlename">专业:</label>
+                            <div class="col-sm-10">
+                                <input name="major" class="form-control" type="text" id="singlemajor" style="width: 200px;">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="singlecomm">联系方式:</label>
+                            <div class="col-sm-10">
+                                <input name="tel" class="form-control" type="text" id="singlecomm" style="width: 200px;">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="singlemail">联系邮箱:</label>
+                            <div class="col-sm-10">
+                                <input name="email" class="form-control" type="text" id="singlemail" style="width: 200px;">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label" for="otherintroduction">其他说明:</label>
+                            <div class="col-sm-10">
+                                <textarea name="other" class="form-control" id="otherintroduction" rows="4" style="width: 200px;" placeholder="此项为不符合参加条件时的说明..."></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-2 control-label">活动必须:</label>
+                            <div class="col-sm-10">
+                                <input id="singleinfo" type="checkbox" value="agree" />同意
+                                <a href="#" style="margin-left: 20px;">参加须知</a>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <p style="float: left"> *以上均为必选项(其他项选填) </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-primary">提交</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Single Sign up part~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Group Sign up part~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel1">团体报名</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" role="form" name="form1" id="form1" method="post" action="http://192.168.1.107:8080/activity/enroll/group/" onsubmit="return checkGroupsignup()">
+
+                        <input type="text" value="1" name="a_id" hidden="hidden" />
+
+                        <div id="groupwarnning" class="alert alert-danger" role="alert" hidden="hidden">
+                            请填写所有必须信息，并详细阅读须知。
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-4 control-label" for="leadername">队长姓名:</label>
+                            <div class="col-sm-8">
+                                <input name="cap_name" class="form-control" type="text" id="leadername" style="width: 200px;">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-4 control-label" for="leadercomm">队长电话:</label>
+                            <div class="col-sm-8">
+                                <input name="cap_tel" class="form-control" type="text" id="leadercomm" style="width: 200px;">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-4 control-label" for="leaderemail">队长邮箱:</label>
+                            <div class="col-sm-8">
+                                <input name="cap_email" class="form-control" type="text" id="leaderemail" style="width: 200px;">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-4 control-label" for="leadermajor">队长专业:</label>
+                            <div class="col-sm-8">
+                                <input name="cap_major" class="form-control" type="text" id="leadermajor" style="width: 200px;">
+                            </div>
+                        </div>
+
+                        <div class="partener">
+                            <div id="member1">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membername1">队员一姓名:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m1_name" class="form-control" type="text" id="membername1" style="width: 200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membermajor1">队员一专业:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m1_major" class="form-control" type="text" id="membermajor1" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="member2">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membername2">队员二姓名:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m2_name" class="form-control" type="text" id="membername2" style="width: 200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membermajor2">队员二专业:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m2_major" class="form-control" type="text" id="membermajor2" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="member3">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membername3">队员三姓名:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m3_name" class="form-control" type="text" id="membername3" style="width: 200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membermajor3">队员三专业:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m3_major" class="form-control" type="text" id="membermajor3" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="member4">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membername4">队员四姓名:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m4_name" class="form-control" type="text" id="membername4" style="width: 200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membermajor4">队员四专业:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m4_major" class="form-control" type="text" id="membermajor4" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="member5">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membername5">队员五姓名:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m5_name" class="form-control" type="text" id="membername5" style="width: 200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membermajor5">队员五专业:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m5_major" class="form-control" type="text" id="membermajor5" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="member6">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membername6">队员六姓名:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m6_name" class="form-control" type="text" id="membername6" style="width: 200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membermajor6">队员六专业:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m6_major" class="form-control" type="text" id="membermajor6" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="member7">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membername7">队员七姓名:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m7_name" class="form-control" type="text" id="membername7" style="width: 200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membermajor7">队员七专业:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m7_major" class="form-control" type="text" id="membermajor7" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="member8">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membername8">队员八姓名:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m8_name" class="form-control" type="text" id="membername8" style="width: 200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membermajor8">队员八专业:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m8_major" class="form-control" type="text" id="membermajor8" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="member9">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membername9">队员九姓名:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m9_name" class="form-control" type="text" id="membername9" style="width: 200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membermajor9">队员九专业:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m9_major" class="form-control" type="text" id="membermajor9" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="member10">
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membername10">队员十姓名:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m10_name" class="form-control" type="text" id="membername10" style="width: 200px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <label class="col-sm-4 control-label" for="membermajor10">队员十专业:</label>
+                                    <div class="col-sm-8">
+                                        <input name="m10_major" class="form-control" type="text" id="membermajor10" style="width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-4 control-label" for="groupotherintro">其他说明:</label>
+                            <div class="col-sm-8">
+                                <textarea name="other" class="form-control" id="groupotherintro" rows="4" style="width: 200px;" placeholder="此项为不符合参加条件时的说明..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                            <label class="col-sm-4 control-label">活动必须:</label>
+                            <div class="col-sm-8">
+                                <input id="groupinfo" type="checkbox" value="agree" />同意
+                                <a href="#" style="margin-left: 20px;">参加须知</a>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <p style="float: left"> *以上均为必选项(其他项选填) </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-primary" onclick="return checkGroupsignup()">提交</button>
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Group Sign up part~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,368 @@
+body{
+    width: 100%;
+}
+
+p{
+    font-family: Georgia;
+    font-size: 15px;
+    color: #111111;
+    padding-top: 15px;
+}
+
+/******************************** navigation ********************************/
+.navbar-header{
+    padding-left: 50px;
+    padding-right: 4px;
+}
+
+.navbar-nav{
+    padding-right: 50px;
+}
+
+.navbar-item{
+    margin: 10px;
+}
+
+.nav-list-img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dropdown-toggle{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.dropdown-item{
+    height: 40px;
+}
+
+.u_name{
+    margin: 0px;
+    padding-left: 15px;
+    color: #666;
+}
+
+.user_main{
+    margin: -15px;
+}
+
+.warnning{
+    width: 800px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+/******************************** rank ********************************/
+.rank-left{
+    padding-top: 75px;
+    padding-bottom: 5px;
+    margin-left: -14px;
+}
+
+.rank-link-left{
+
+}
+
+.rank-right{
+    padding-top: 75px;
+    padding-bottom: 5px;
+    margin-right: -14px;
+    float: right;
+}
+
+.rank-link-right{
+
+}
+
+.rl-active-color{
+    color: #5fca4c;
+}
+
+.rl-unactive-color{
+    color: lightgray;
+}
+
+/******************************** main ********************************/
+.main{
+    width: 950px;
+    margin: auto;
+}
+
+.modeul-main{
+    padding-top: 75px;
+}
+
+/******************************** activity ********************************/
+.row-activity{
+    padding-bottom: 20px;
+}
+
+.activity-modeul{
+    height: 240px;
+}
+
+.ac-container{
+    height: 240px;
+    cursor:pointer;
+}
+
+.ac_img{
+    position: absolute;
+    z-index:-1;
+}
+
+.ac_intro{
+    background-color: #ffffff;
+    height: 240px;
+    width: 440px;
+}
+
+.ac_title{
+    padding-top: 35px;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+}
+
+.ac_brief{
+    padding-top: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-size: 14px;
+    height: 120px;
+    color: #666;
+}
+
+.ac_record{
+    padding-top: 6px;
+    float: right;
+    padding-right: 35px;
+}
+
+.ac_record_views{
+    padding-left: 6px;
+    color: #888;
+}
+
+.ac_record_favor{
+    padding-left: 6px;
+    color: #888;
+}
+
+/******************************** club ********************************/
+.row-club{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0.6px 0.6px 5px #dddddd;
+}
+
+.club-container{
+}
+
+.club-logo{
+    padding-top: 40px;
+    padding-left: 15px;
+    height: 200px;
+}
+
+.club-info{
+    padding-left: 30px;
+    padding-top: 8px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+}
+
+.club-info .name{
+    padding-top: 0px;
+    font-size: 24px;
+    color: #333;
+}
+
+.club-info .intro{
+    padding-top: 0px;
+    font-size: 16px;
+    color: #666;
+    line-height: 200%;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+
+.number{
+    font-size: 15px;
+    color: #333;
+}
+
+.favor{
+    font-size: 15px;
+    color: #333;
+}
+
+.views{
+    font-size: 15px;
+    color: #333;
+}
+
+.row .club-record{
+    width: 300px;
+    float: right;
+    padding-right: 80px;
+}
+
+/******************************** journal ********************************/
+.row-journal{
+    padding-top: 10px;
+}
+
+.journal-modeul{
+    height: 500px;
+    background-color: lightblue;
+}
+
+.journal-menu{
+    padding: 0px;
+    height: 750px;
+}
+
+.journal-body{
+    padding: 80px;
+    box-shadow: 1px 1px 10px #dddddd;
+}
+
+.j-text-title{
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.j-text-activity{
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    font-size: 14px;
+    background-color: #edf0f1;
+    color: #8a91a6;
+    border-radius: 15px;
+}
+
+.j-text-content{
+    padding-top: 30px;
+    font-size: 16px;
+    color: #333;
+    line-height: 200%;
+}
+
+/******************************** request ********************************/
+.rq-modeul{
+    height: 1000px;
+}
+
+.rq-main{
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-shadow: 0.6px 0.6px 5px #dddddd;
+}
+
+.rq-user{
+    margin-top: -30px;
+    margin-top: -30px;
+    margin-left: -25px;
+    margin-right: -25px;
+    height: 80px;
+    background-color: #f9d448;
+}
+
+.rq-user-face{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.rq-name{
+    color: white;
+    font-size: 16px;
+
+}
+
+.rq-time{
+    padding: 0px;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+.rq-detail{
+    padding: 0px;
+    padding-top: 5px;
+    font-size: 16px;
+    color: #666666;
+}
+
+.modal-body{
+    padding-top: 5px;
+    padding-left: 25px;
+}
+
+/******************************** icon ********************************/
+.glyphicon-chevron-left{
+    color: lightgray;
+}
+
+.glyphicon-chevron-right{
+    color: lightgray;
+}
+
+/******************************** advertisements ********************************/
+.advertisement{
+    margin-top: 50px;
+    height: 220px;
+    background-color: lightcoral;
+}
+
+/******************************** bottom navigation ********************************/
+.bottom{
+    margin-top: 0px;
+    background-color: #eeeeee;
+    height: 280px;
+}
+
+.transparent_class {
+    filter:alpha(opacity=80);
+    -moz-opacity:0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+
+.request-title{
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.journal-title{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.club-title{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.activity-title{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.row.main.search{
+    width: 300px;
+    padding-bottom: 50px;
+}
