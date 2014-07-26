@@ -104,6 +104,7 @@ $(document).ready(function(){
             }
         });
 
+        
         var myactlist = "/activity/list/create/?u_id=" + global_userid;
 
         //user actlistalladd replace
