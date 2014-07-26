@@ -82,7 +82,6 @@ $(document).ready(function(){
                     $(this).parent().parent().parent().parent().parent().hide();
                     var delclubadd = "/club/quit/?c_id="+ $(this).val();
                     $.get(delclubadd,function(data,status){
-                        alert("Data: " + data + "\nStatus: " + status);
                     });
 
                 }
@@ -115,7 +114,6 @@ $(document).ready(function(){
                 var actbrief = data[j].brief;
                 var actlogo = data[j].image_url;
                 var actid = data[j].id;
-                alert("act_id = " + actid);
                 $("#modeul").append(clubcode);
                 $(".act_title:eq("+ String(j) +")").html(acttitle);
                 $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + String(actid));
@@ -138,7 +136,6 @@ $(document).ready(function(){
                     $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
                     $(".act_intro:eq("+ String(j) +")").html(actbrief);
                     $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
-                    alert("act_id = " + actid);
                 }
 
             });
@@ -200,7 +197,6 @@ $(document).ready(function(){
 
         var folloadd = "/user/social/follow/?f_id=" + $(this).val();
         $.get(folloadd,function(data,status){
-            alert("Data: " + data + "\nStatus: " + status);
         });
 
     });
@@ -274,10 +270,6 @@ function inituser()
             var wb = data.weibo;
             var em = data.email;
 
-            alert(n + " " + nn + " " + s + " " + se + " " + pro + " " + y + " "
-                + sp + " " + co + " " + en + " " + f + " " + t + " " + q + " " + wc + " " + wb + " " + em);
-
-
             if(t != "")
                 $("#pn").html("电话: <br/>"  + t);
             else
@@ -316,8 +308,6 @@ function inituser()
                 $("#user_sign").html(s);
             else
                 $("#user_sign").html("延续青春、放飞梦想");
-
-            alert("sf = " + sf);
 
             if(sf == "0")
             {
@@ -530,8 +520,6 @@ function initchangeinfo()
         var wc = data.wechat;
         var wb = data.weibo;
 
-        alert(n + " " + nn + " " + s + " " + se + " " + pro + " " + y + " "
-            + sp + " " + co + " " + en + " " + f + " " + t + " " + wc + " " + wb);
 
         if(n != "")
             $("#inputName1").val(n);
@@ -957,11 +945,10 @@ function initAllinfo()
         dataType: 'text',
         success: function(data) {
             allinfocode = data;
-            var allinfoadd = "/news/list/school/?code=" + gloabl_code;
         }
     });
 
-
+    var allinfoadd = "/news/list/school/?code=" + gloabl_code;
     //user userlistfolloadd replace
     $.getJSON(allinfoadd ,function(data){
         for(var i = 0; i < data.length; i++)
@@ -973,7 +960,8 @@ function initAllinfo()
             var pertime = data[i].when;
             var pertype = data[i].what;
             $("#allinfo").append(allinfocode);
-
+            alert("allinfoadd = " + allinfoadd);
+            alert("allinfocode = " + allinfocode);
             $(".acttime:eq("+ String(i) +")").html(pertime);
 
             $(".actclub:eq("+ String(i) +")").html(actname);
@@ -1000,6 +988,8 @@ function initAllinfo()
             alert("href operate o_id");
         });
     });
+
+
 }
 
 function initFriendList()
@@ -1103,7 +1093,6 @@ function manageFriend()
                 var uid = $(this).val();
                 add = "/user/social/unfollow/?f_id=" + String(uid); //$(this).val()里存储uid
                 $.get(add,function(data,status){
-                    alert("Data: " + data + "\nStatus: " + status);
 
                 });
             }
