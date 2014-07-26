@@ -165,7 +165,7 @@ def showSelfClubActivity(request):
 	user = User_C.objects.get(id=u_id)
 
 	result = []
-	for s in user.clubsocialms_set.all():
+	for s in user.memberinfo_set.all():
 		for host in s.club.hostclub_set.all():
 			activity = host.activity
 			tem = {
