@@ -120,8 +120,8 @@ $(document).ready(function(){
                 $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
                 $(".act_intro:eq("+ String(j) +")").html(actbrief);
                 $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
+                alert("act_id = " + actid);
             }
-            alert("act_id = " + actid);
         });
 
         var actlistall = "/activity/list/club/?u_id=" + global_userid;
@@ -138,8 +138,9 @@ $(document).ready(function(){
                 $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
                 $(".act_intro:eq("+ String(j) +")").html(actbrief);
                 $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
+                alert("act_id = " + actid);
             }
-            alert("act_id = " + actid);
+
         });
 
     });
