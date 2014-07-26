@@ -40,9 +40,7 @@ $(document).ready(function(){
             }
 
             $(".myclubbtn").click(function(){
-
                 initchangeclubinfo($(this).val());
-
             });
 
         });
@@ -197,6 +195,10 @@ $(document).ready(function(){
 
         var folloadd = "/user/social/follow/?f_id=" + $(this).val();
         $.get(folloadd,function(data,status){
+            if(String(status) == "1")
+                alert("你已经成功关注了ta哦!");
+            else
+                alert("不好意思关注失败请重试!");
         });
 
     });
@@ -960,34 +962,46 @@ function initAllinfo()
             var pertime = data[i].when;
             var pertype = data[i].what;
             $("#allinfo").append(allinfocode);
-            $(".acttime:eq("+ String(i) +")").html(pertime);
-
-            $(".actclub:eq("+ String(i) +")").html(actname);
-
-            $(".clubact:eq("+ String(i) +")").html(pername);
 
             if(pertype == "1")
+            {
                 $(".acttype:eq("+ String(i) +")").html("创建了");
+                $(".acttime:eq("+ String(i) +")").html(pertime);
+                $(".actclub:eq("+ String(i) +")").html(actname);
+                $(".actclub:eq("+ String(i) +")").attr("href", "/user_home/?u_id=" + actid);
+                $(".clubact:eq("+ String(i) +")").html(pername);
+                $(".clubact:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + perid);
+            }
             else if(pertype == "2")
+            {
                 $(".acttype:eq("+ String(i) +")").html("修改了");
+                $(".acttime:eq("+ String(i) +")").html(pertime);
+                $(".actclub:eq("+ String(i) +")").html(actname);
+                $(".actclub:eq("+ String(i) +")").attr("href", "/user_home/?u_id=" + actid);
+                $(".clubact:eq("+ String(i) +")").html(pername);
+                $(".clubact:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + perid);
+            }
             else if(pertype == "3")
+            {
                 $(".acttype:eq("+ String(i) +")").html("发布了");
+                $(".acttime:eq("+ String(i) +")").html(pertime);
+                $(".actclub:eq("+ String(i) +")").html(actname);
+                $(".actclub:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + actid);
+                $(".clubact:eq("+ String(i) +")").html(pername);
+                $(".clubact:eq("+ String(i) +")").attr("href", "/activity_home/?a_id=" + perid);
+            }
             else
+            {
                 $(".acttype:eq("+ String(i) +")").html("发布了");
+                $(".acttime:eq("+ String(i) +")").html(pertime);
+                $(".actclub:eq("+ String(i) +")").html(actname);
+                $(".actclub:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + actid);
+                $(".clubact:eq("+ String(i) +")").html(pername + "日志");
+            }
 
         }
 
-        $(".actclub").click(function(){
-            //href operate
-            alert("href operate s_id");
-        });
-        $(".clubact").click(function(){
-            //href operate
-            alert("href operate o_id");
-        });
     });
-
-
 }
 
 function initFriendList()
