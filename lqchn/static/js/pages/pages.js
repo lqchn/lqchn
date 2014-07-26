@@ -1032,23 +1032,11 @@ function initFriendList()
 
             $(".friendname:eq("+ String(i) +")").html(friendname);
             $(".friendnickname:eq("+ String(i) +")").html(friendnick);
+            $(".friendnickname:eq("+ String(i) +")").attr("href", "/user_home/?u_id=" + friendid);
             $(".friendphoto:eq("+ String(i) +")").attr("src", friendphoto);
-            $(".frph:eq("+ String(i) +")").attr("href", "#"); // 此处跳转friend主页面
+            $(".frph:eq("+ String(i) +")").attr("href", "/user_home/?u_id=" + friendid);
 
         }
-
-        $(".friendphoto").click(function(){
-            alert($(this).val());
-        });
-        $(".friendnickname").click(function(){
-            alert($(this).val());
-        });
-        $(".friendphoto").click(function(){
-            alert($(this).val());
-        });
-        $(".frph").click(function(){
-            //跳转操作
-        });
     });
 }
 
@@ -1083,21 +1071,14 @@ function manageFriend()
             var friendid = data[i].user_id;
             var friendphoto = data[i].user_photo;
             $(".friendname:eq("+ String(i) +")").html(friendname);
+            $(".friendname:eq("+ String(i) +")").attr("href", "/user_home/?u_id=" + friendid);
             $(".friendnickname:eq("+ String(i) +")").html(friendnick);
+            $(".friendnickname:eq("+ String(i) +")").attr("href", "/user_home/?u_id=" + friendid);
             $(".friendphoto").attr("src", friendphoto);
             $(".delfriend").last().val(friendid);
             $("#managefriend").append(friendlistcode);
         }
 
-        $(".friendphoto").click(function(){
-            alert($(this).val());
-        });
-        $(".friendnickname").click(function(){
-            alert($(this).val());
-        });
-        $(".friendname").click(function(){
-            alert($(this).val());
-        });
         $(".delfriend").click(function(){
             if(confirm_deletefriend())
             {
@@ -1140,8 +1121,14 @@ function manageActivity()
     var myactivity = "/activity/list/create/?u_id=" + global_userid;
     $.getJSON(myactivity ,function(data){
         for (var i=0; i<data.length; i++) {
+            var acttitle = data[i].title;
+            var actid = data[i].id;
+            var actimgurl = data[i].image_url;
+
             $("#manageactivity").append(actinfocode);
-            $(".activityname:eq("+ String(i) +")").html(data[i].title);
+            $(".activityname:eq("+ String(i) +")").html(acttitle);
+            $(".activityname:eq("+ String(i) +")").attr("href", "/activity_home/?a_id=" + actid);
+            $(".actimg:eq("+ String(i) +")").attr("href", actimgurl);
             $(".signupinfo:eq("+ String(i) +")").val("href","#");//这个跳转需要更改
 
         }
@@ -1301,6 +1288,7 @@ function managemyclub()
             e.options.add(new Option(data[i].club_name, data[i].club_id)); // value not sure
             $("#manageactivity").append(actinfocode);
             $(".activityname:eq("+ String(i) +")").html(data[i].title);
+            $(".activityname:eq("+ String(i) +")").attr("href", data[i].club_id);
             $(".signupinfo:eq("+ String(i) +")").val("href","#");//这个跳转需要更改
         }
     });

@@ -1,5 +1,5 @@
                 <div>
-                    <img class="img-circle"  style="width: 40px; height: 40px;" />
+                    <img class="img-circle actimg"   style="width: 40px; height: 40px;" />
                     <a class="activityname"></a>
                     <a class="signupinfo" href="#" target="_blank" >报名情况</a>
                     <br />
