@@ -114,13 +114,13 @@ $(document).ready(function(){
                 var actbrief = data[j].brief;
                 var actlogo = data[j].image_url;
                 var actid = data[j].id;
+                alert("act_id = " + actid);
                 $("#modeul").append(clubcode);
                 $(".act_title:eq("+ String(j) +")").html(acttitle);
                 $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
                 $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
                 $(".act_intro:eq("+ String(j) +")").html(actbrief);
                 $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
-                alert("act_id = " + actid);
             }
         });
 
@@ -128,10 +128,10 @@ $(document).ready(function(){
         $.getJSON(actlistall ,function(data){
             for(var i = 0; i < data.length; i++, j++)
             {
-                var acttitle = data[j].title;
-                var actbrief = data[j].brief;
-                var actlogo = data[j].image_url;
-                var actid = data[j].id;
+                var acttitle = data[i].title;
+                var actbrief = data[i].brief;
+                var actlogo = data[i].image_url;
+                var actid = data[i].id;
                 $("#modeul").append(clubcode);
                 $(".act_title:eq("+ String(j) +")").html(acttitle);
                 $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
