@@ -117,9 +117,13 @@ $(document).ready(function(){
                 alert("act_id = " + actid);
                 $("#modeul").append(clubcode);
                 $(".act_title:eq("+ String(j) +")").html(acttitle);
+                alert("1");
                 $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + String(actid));
+                alert("2");
                 $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + String(actid));
+                alert("3");
                 $(".act_intro:eq("+ String(j) +")").html(actbrief);
+                alert("4");
                 $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
                 alert("/activity_home/?a_id=" + String(actid));
             }
