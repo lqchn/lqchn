@@ -960,8 +960,6 @@ function initAllinfo()
             var pertime = data[i].when;
             var pertype = data[i].what;
             $("#allinfo").append(allinfocode);
-            alert("allinfoadd = " + allinfoadd);
-            alert("allinfocode = " + allinfocode);
             $(".acttime:eq("+ String(i) +")").html(pertime);
 
             $(".actclub:eq("+ String(i) +")").html(actname);
