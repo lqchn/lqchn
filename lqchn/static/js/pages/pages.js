@@ -121,6 +121,7 @@ $(document).ready(function(){
                 $(".act_intro:eq("+ String(j) +")").html(actbrief);
                 $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
             }
+            alert("act_id = " + actid);
         });
 
         var actlistall = "/activity/list/club/?u_id=" + global_userid;
@@ -138,6 +139,7 @@ $(document).ready(function(){
                 $(".act_intro:eq("+ String(j) +")").html(actbrief);
                 $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
             }
+            alert("act_id = " + actid);
         });
 
     });
