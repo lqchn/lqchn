@@ -33,6 +33,7 @@ $(document).ready(function(){
                 $("#modeul").append(myclubcode);
                 $(".club_detail:eq("+ String(i) +")").html(detail);
                 $(".club_name:eq("+ String(i) +")").html(clubname);
+                $(".club_name:eq("+ String(i) +")").attr("href", "/activity_home/?a_id=" + clubid);
                 $(".club_img:eq("+ String(i) +")").attr("src", clubph);
                 $(".myclubbtn:eq("+ String(i) +")").val(clubid);
 
@@ -70,6 +71,7 @@ $(document).ready(function(){
                 $("#modeul").append(clubcode);
                 $(".club_detail:eq("+ String(i) +")").html(detail);
                 $(".club_name:eq("+ String(i) +")").html(clubname);
+                $(".club_name:eq("+ String(i) +")").attr("href", "/activity_home/?a_id=" + clubid);
                 $(".club_img:eq("+ String(i) +")").attr("src", clubph);
                 $(".delete").last().val(clubid);
             }
