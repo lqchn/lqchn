@@ -1,4 +1,4 @@
-var gloabl_aid = "1";
+var gloabl_aid = "";
 var gloabl_num = "";
 var gloabl_cid = "";
 

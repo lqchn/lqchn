@@ -33,7 +33,7 @@ $(document).ready(function(){
                 $("#modeul").append(myclubcode);
                 $(".club_detail:eq("+ String(i) +")").html(detail);
                 $(".club_name:eq("+ String(i) +")").html(clubname);
-                $(".club_name:eq("+ String(i) +")").attr("href", "/activity_home/?a_id=" + clubid);
+                $(".club_name:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + clubid);
                 $(".club_img:eq("+ String(i) +")").attr("src", clubph);
                 $(".myclubbtn:eq("+ String(i) +")").val(clubid);
 
@@ -71,7 +71,7 @@ $(document).ready(function(){
                 $("#modeul").append(clubcode);
                 $(".club_detail:eq("+ String(i) +")").html(detail);
                 $(".club_name:eq("+ String(i) +")").html(clubname);
-                $(".club_name:eq("+ String(i) +")").attr("href", "/activity_home/?a_id=" + clubid);
+                $(".club_name:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + clubid);
                 $(".club_img:eq("+ String(i) +")").attr("src", clubph);
                 $(".delete").last().val(clubid);
             }
@@ -108,29 +108,35 @@ $(document).ready(function(){
 
         //user actlistalladd replace
         $.getJSON(myactlist ,function(data){
-            for(var i = 0; i < data.length; i++)
+            for(var j = 0; j < data.length; j++)
             {
-                var acttitle = data[i].title;
-                var actbrief = data[i].brief;
-                var actlogo = data[i].image_url;
+                var acttitle = data[j].title;
+                var actbrief = data[j].brief;
+                var actlogo = data[j].image_url;
+                var actid = data[j].id;
                 $("#modeul").append(clubcode);
-                $(".act_title:eq("+ String(i) +")").html(acttitle);
-                $(".act_intro:eq("+ String(i) +")").html(actbrief);
-                $(".act_logo:eq("+ String(i) +")").attr("src", actlogo);
+                $(".act_title:eq("+ String(j) +")").html(acttitle);
+                $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
+                $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
+                $(".act_intro:eq("+ String(j) +")").html(actbrief);
+                $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
             }
         });
 
         var actlistall = "/activity/list/club/?u_id=" + global_userid;
         $.getJSON(actlistall ,function(data){
-            for(var i = 0; i < data.length; i++)
+            for(var i = 0; i < data.length; i++, j++)
             {
-                var acttitle = data[i].title;
-                var actbrief = data[i].brief;
-                var actlogo = data[i].image_url;
+                var acttitle = data[j].title;
+                var actbrief = data[j].brief;
+                var actlogo = data[j].image_url;
+                var actid = data[j].id;
                 $("#modeul").append(clubcode);
-                $(".act_title:eq("+ String(i) +")").html(acttitle);
-                $(".act_intro:eq("+ String(i) +")").html(actbrief);
-                $(".act_logo:eq("+ String(i) +")").attr("src", actlogo);
+                $(".act_title:eq("+ String(j) +")").html(acttitle);
+                $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
+                $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
+                $(".act_intro:eq("+ String(j) +")").html(actbrief);
+                $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
             }
         });
 
