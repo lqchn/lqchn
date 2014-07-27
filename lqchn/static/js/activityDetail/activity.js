@@ -18,6 +18,19 @@ $(document).ready(function(){
 
 });
 
+function getcomment()
+{
+    $("#actcomment").children().remove();
+    var file_name = "/static/file/comment/test2.txt";
+    $.ajax({
+        url: file_name,
+        dataType: 'text',
+        success: function(data) {
+            $("#actcomment").append(data);
+        }
+    });
+}
+
 function getallinfo()
 {
     var allinfoadd = "http://192.168.1.107:8080/activity/detail/?a_id=" + gloabl_aid;
