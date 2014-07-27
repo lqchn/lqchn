@@ -67,10 +67,7 @@ function getallinfo()
         if(parseInt(gloabl_num) == 1)
             $("#groupsignup").hide();
         else
-        {
             $("#singlesignup").hide();
-            alert("gloabl_num value = " + gloabl_num);
-        }
 
     });
     getcomment();
