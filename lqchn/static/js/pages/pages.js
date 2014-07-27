@@ -167,10 +167,10 @@ $(document).ready(function(){
 
     $("#com").click(function(){
         $("#modeul").children().remove();
-        var file_name = "/static/file/comment/test2.html"
+        var file_name = "/static/file/comment/test2.txt"
         $.ajax({
             url: file_name,
-            dataType: 'html',
+            dataType: 'txt',
             success: function(data) {
                 $("#modeul").append(data);
             }
