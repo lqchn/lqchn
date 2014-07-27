@@ -166,18 +166,13 @@ $(document).ready(function(){
 
 
     $("#com").click(function(){
-        alert("1");
         $("#modeul").children().remove();
-        alert("2");
         var file_name = "/static/file/comment/test2.html"
-        alert("3");
         $.ajax({
             url: file_name,
             dataType: 'html',
             success: function(data) {
-                alert("4");
                 $("#modeul").append(data);
-                alert("5");
             }
         });
     });
