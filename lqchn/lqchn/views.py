@@ -21,3 +21,6 @@ def jumpClubDetail(request):
 def jumpActivityDetail(request):
 	a_id = request.GET['a_id']
 	return render(request,'activityDetail/activity.html',{'a_id':a_id})
+
+def commentTest(request):
+	return render(request,'comment/test2.html')

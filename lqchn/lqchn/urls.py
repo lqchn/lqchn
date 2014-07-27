@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^pages/$','lqchn.views.homepage'),
     url(r'^club_home/$','lqchn.views.jumpClubDetail'),
     url(r'^activity_home/$','lqchn.views.jumpActivityDetail'),
+    url(r'^comment/$','lqchn.views.commentTest'),
 
     #create new user
     url(r'^user/create/$','userAdmin.views.createNewUser'),
