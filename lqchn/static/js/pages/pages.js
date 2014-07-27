@@ -169,7 +169,7 @@ $(document).ready(function(){
         alert("1");
         $("#modeul").children().remove();
         alert("2");
-        var file_name = "/static/templates/comment/test2.html"
+        var file_name = "/static/file/comment/test2.html"
         alert("3");
         $.ajax({
             url: file_name,
