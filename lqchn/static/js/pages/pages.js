@@ -172,7 +172,9 @@ $(document).ready(function(){
             url: file_name,
             dataType: 'html',
             success: function(data) {
+                alert("hi");
                 $("#modeul").append(data);
+                alert("nihao");
             }
         });
     });
