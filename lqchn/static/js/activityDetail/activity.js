@@ -73,6 +73,7 @@ function getallinfo()
         }
 
     });
+    getcomment();
 }
 
 function removeMember()
