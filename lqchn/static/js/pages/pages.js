@@ -173,7 +173,7 @@ $(document).ready(function(){
         alert("3");
         $.ajax({
             url: file_name,
-            dataType: 'txt',
+            dataType: 'text',
             success: function(data) {
                 alert("4");
                 $("#modeul").append(data);
