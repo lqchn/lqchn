@@ -7,11 +7,12 @@
     <meta charset="UTF-8">
 
     <!--bootstrap css-->
-    <link rel="stylesheet" href="/Users/apple/Desktop/Source/bootstrap-3.2.0/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bootstrap-3.2.0/dist/css/bootstrap.css">
     <!--jquery-->
-    <script src="/Users/apple/Desktop/Source/jquery-2.1.1.min.js"></script>
+    <script src="/static/jquery-2.1.1.min.js"></script>
     <!--bootstrap js-->
-    <script src="/Users/apple/Desktop/Source/bootstrap-3.2.0/dist/js/bootstrap.js"></script>
+    <script src="/static/bootstrap-3.2.0/dist/js/bootstrap.js"></script>
+    <script src="/static/less-1.7.1.min.js"></script>
 
     <!--comment css file-->
     <style>
@@ -143,11 +144,11 @@
         var c_id = 0;
 
         function loadCommentPart(){
-            var formURL = "com-form.html";
-            var mainURL = "com-main.html";
-            var replyURL = "com-reply.html";
-            var listURL = "http://192.168.1.107:8080/user/list/comment/?id=1&u_id=1";
-            var compostURL = "http://192.168.1.107:8080/comment/post/";
+            var formURL = "/static/file/comment/com-form.html";
+            var mainURL = "/static/file/comment/com-main.html";
+            var replyURL = "/static/file/comment/com-reply.html";
+            var listURL = "/user/list/comment/?id=1&u_id=1";
+            var compostURL = "/comment/post/";
             //1,load form of comment
             $.ajax({
                 url: formURL,
