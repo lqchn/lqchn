@@ -23,7 +23,7 @@ $(document).ready(function(){
         var myclublist = "/club/list/create/?u_id=" + global_userid;
 
         //user clublustalladd replace
-        $.getJSON(myclublist ,function(data){
+        $.getJSON("/club/list/create/?u_id=" + global_userid ,function(data){
             for(var i = 0; i < data.length; i++)
             {
                 var clubname = data[i].club_name;
@@ -35,6 +35,7 @@ $(document).ready(function(){
                 $(".club_name:eq("+ String(i) +")").html(clubname);
                 $(".club_name:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + clubid);
                 $(".club_img:eq("+ String(i) +")").attr("src", clubph);
+                $(".imghref:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + clubid);
                 $(".myclubbtn:eq("+ String(i) +")").val(clubid);
 
             }
@@ -43,48 +44,51 @@ $(document).ready(function(){
                 initchangeclubinfo($(this).val());
             });
 
-        });
-
-
-        var file_name = "/static/file/pages/club.txt";
-        var clubcode = "";
-        $.ajax({
-            url: file_name,
-            dataType: 'text',
-            success: function(data) {
-                clubcode = data;
-            }
-        });
-
-        var clublistalladd = "/club/list/join/?u_id=" + global_userid;
-
-                    //user clublustalladd replace
-        $.getJSON(clublistalladd ,function(data){
-            for(var i = 0; i < data.length; i++)
-            {
-                var clubname = data[i].club_name;
-                var detail = data[i].club_introduction;
-                var clubid = data[i].club_id;
-                var clubph = data[i].club_logo;
-                $("#modeul").append(clubcode);
-                $(".club_detail:eq("+ String(i) +")").html(detail);
-                $(".club_name:eq("+ String(i) +")").html(clubname);
-                $(".club_name:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + clubid);
-                $(".club_img:eq("+ String(i) +")").attr("src", clubph);
-                $(".delete").last().val(clubid);
-            }
-
-            $(".delete").click(function(){
-                if(confirm_deleteclub())
-                {
-                    $(this).parent().parent().parent().parent().parent().hide();
-                    var delclubadd = "/club/quit/?c_id="+ $(this).val();
-                    $.get(delclubadd,function(data,status){
-                    });
-
+            var file_name = "/static/file/pages/club.txt";
+            var clubcode = "";
+            $.ajax({
+                url: file_name,
+                dataType: 'text',
+                success: function(data) {
+                    clubcode = data;
                 }
             });
+
+            var clublistalladd = "/club/list/join/?u_id=" + global_userid;
+
+            //user clublustalladd replace
+            $.getJSON("/club/list/join/?u_id=" + global_userid ,function(data){
+                for(var i = 0; i < data.length; i++)
+                {
+                    var clubname = data[i].club_name;
+                    var detail = data[i].club_introduction;
+                    var clubid = data[i].club_id;
+                    var clubph = data[i].club_logo;
+                    $("#modeul").append(clubcode);
+                    $(".club_detail:eq("+ String(i) +")").html(detail);
+                    $(".club_name:eq("+ String(i) +")").html(clubname);
+                    $(".club_name:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + clubid);
+                    $(".club_img:eq("+ String(i) +")").attr("src", clubph);
+                    $(".imghref:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + clubid);
+                    $(".delete").last().val(clubid);
+                }
+
+                $(".delete").click(function(){
+                    if(confirm_deleteclub())
+                    {
+                        $(this).parent().parent().parent().parent().parent().hide();
+                        var delclubadd = "/club/quit/?c_id="+ $(this).val();
+                        $.get("/club/quit/?c_id="+ $(this).val(),function(data,status){
+                            if(String(status) == "1")
+                                alert("delete success");
+                            else
+                                alert("delete failed");
+                        });
+                    }
+                });
+            });
         });
+
     });
 
 
@@ -101,12 +105,13 @@ $(document).ready(function(){
             }
         });
 
-
         var myactlist = "/activity/list/create/?u_id=" + global_userid;
 
         //user actlistalladd replace
-        $.getJSON(myactlist ,function(data){
-            for(var j = 0; j < data.length; j++)
+        $.getJSON("/activity/list/create/?u_id=" + global_userid ,function(data){
+            var j = 0;
+
+            for(j = 0; j < data.length; j++)
             {
                 var acttitle = data[j].title;
                 var actbrief = data[j].brief;
@@ -121,7 +126,7 @@ $(document).ready(function(){
             }
 
             var actlistall = "/activity/list/club/?u_id=" + global_userid;
-            $.getJSON(actlistall ,function(data){
+            $.getJSON("/activity/list/club/?u_id=" + global_userid ,function(data){
                 for(var i = 0; i < data.length; i++, j++)
                 {
                     var acttitle = data[i].title;
@@ -194,7 +199,7 @@ $(document).ready(function(){
         alert("关注ta么？");
 
         var folloadd = "/user/social/follow/?f_id=" + $(this).val();
-        $.get(folloadd,function(data,status){
+        $.get("/user/social/follow/?f_id=" + $(this).val(),function(data,status){
             if(String(status) == "1")
                 alert("你已经成功关注了ta哦!");
             else
@@ -217,7 +222,7 @@ $(document).ready(function(){
     });
 
     $("#manageclubbtn").click(function(){
-       // managemyclub();
+        managemyclub();
     });
 
     $("editclubbtn").click(function(){
@@ -254,7 +259,7 @@ function inituser()
         allinfoadd = "/user/allinfo/?id=" + String(global_userid);
 
         //user allinfoadd replace
-        $.getJSON(allinfoadd,function(data){
+        $.getJSON("/user/allinfo/?id=" + String(global_userid),function(data){
             var sf = data.self;
             var n = data.name;
             var nn = data.nickname;
@@ -278,9 +283,21 @@ function inituser()
                 $("#pn").html("电话: 暂无");
 
             if(f != "")
-                $("#fe").html("爱好: <br/>"  + f);
+            {
+                if(f == "01")
+                    $("#fe").html("爱好:户外运动");
+                else if(f == "02")
+                    $("#fe").html("爱好:社会服务");
+                else if(f == "03")
+                    $("#fe").html("爱好:文学");
+                else if(f == "04")
+                    $("#fe").html("爱好:艺术");
+                else
+                    $("#fe").html("爱好:电子竞技");
+            }
             else
                 $("#fe").html("爱好: 暂无");
+
 
             if(y != "")
             {
@@ -338,7 +355,7 @@ function initself()
     var allinfoadd =  "/user/allinfo/?id=" + global_userid;
 
                 //use allinfoadd replace
-    $.getJSON(allinfoadd,function(data){
+    $.getJSON("/user/allinfo/?id=" + String(global_userid),function(data){
 
         var n = data.name;
         var nn = data.nickname;
@@ -469,30 +486,39 @@ function begin()
     var myactlist = "/activity/list/create/?u_id=" + global_userid;
 
     //user actlistalladd replace
-    $.getJSON(myactlist ,function(data){
-        for(var i = 0; i < data.length; i++)
+    $.getJSON("/activity/list/create/?u_id=" + global_userid ,function(data){
+        var j = 0;
+
+        for(j = 0; j < data.length; j++)
         {
-            var acttitle = data[i].title;
-            var actbrief = data[i].brief;
-            var actlogo = data[i].image_url;
+            var acttitle = data[j].title;
+            var actbrief = data[j].brief;
+            var actlogo = data[j].image_url;
+            var actid = data[j].id;
             $("#modeul").append(clubcode);
-            $(".act_title:eq("+ String(i) +")").html(acttitle);
-            $(".act_intro:eq("+ String(i) +")").html(actbrief);
-            $(".act_logo:eq("+ String(i) +")").attr("src", actlogo);
+            $(".act_title:eq("+ String(j) +")").html(acttitle);
+            $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + String(actid));
+            $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + String(actid));
+            $(".act_intro:eq("+ String(j) +")").html(actbrief);
+            $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
         }
 
         var actlistall = "/activity/list/club/?u_id=" + global_userid;
-        $.getJSON(actlistall ,function(data){
-            for(var i = 0; i < data.length; i++)
+        $.getJSON("/activity/list/club/?u_id=" + global_userid ,function(data){
+            for(var i = 0; i < data.length; i++, j++)
             {
                 var acttitle = data[i].title;
                 var actbrief = data[i].brief;
                 var actlogo = data[i].image_url;
+                var actid = data[i].id;
                 $("#modeul").append(clubcode);
-                $(".act_title:eq("+ String(i) +")").html(acttitle);
-                $(".act_intro:eq("+ String(i) +")").html(actbrief);
-                $(".act_logo:eq("+ String(i) +")").attr("src", actlogo);
+                $(".act_title:eq("+ String(j) +")").html(acttitle);
+                $(".act_title:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
+                $(".imghref:eq("+ String(j) +")").attr("href", "/activity_home/?a_id=" + actid);
+                $(".act_intro:eq("+ String(j) +")").html(actbrief);
+                $(".act_logo:eq("+ String(j) +")").attr("src", actlogo);
             }
+
         });
 
     });
@@ -506,7 +532,7 @@ function initchangeinfo()
 
     var allinfoadd = "/user/allinfo/?id=" + global_userid;
             //use allinfoadd replace
-    $.getJSON(allinfoadd,function(data){
+    $.getJSON("/user/allinfo/?id=" + global_userid,function(data){
         var n = data.name;
         var nn = data.nickname;
         var s = data.sign;
@@ -952,7 +978,7 @@ function initAllinfo()
 
     var allinfoadd = "/news/list/school/?code=" + gloabl_code;
     //user userlistfolloadd replace
-    $.getJSON(allinfoadd ,function(data){
+    $.getJSON("/news/list/school/?code=" + gloabl_code ,function(data){
         for(var i = 0; i < data.length; i++)
         {
             var actname = data[i].s_name;
@@ -1021,7 +1047,7 @@ function initFriendList()
 
     var userlistfolloadd = "/user/list/following/?u_id=" + global_userid;
                 //user userlistfolloadd replace
-    $.getJSON(userlistfolloadd ,function(data){
+    $.getJSON("/user/list/following/?u_id=" + global_userid ,function(data){
         for(var i = 0; i < data.length; i++)
         {
             var friendname = data[i].user_name;
@@ -1063,7 +1089,7 @@ function manageFriend()
         }
     });
             // use userlistfolloadd replace
-    $.getJSON(userlistfolloadd ,function(data){
+    $.getJSON("/user/list/following/?u_id=" + global_userid ,function(data){
         for(var i = 0; i < data.length; i++)
         {
             var friendname = data[i].user_name;
@@ -1119,7 +1145,7 @@ function manageActivity()
     });
 
     var myactivity = "/activity/list/create/?u_id=" + global_userid;
-    $.getJSON(myactivity ,function(data){
+    $.getJSON("/activity/list/create/?u_id=" + global_userid ,function(data){
         for (var i=0; i<data.length; i++) {
             var acttitle = data[i].title;
             var actid = data[i].id;
@@ -1239,7 +1265,7 @@ function loadactivity()
     $("#chooseactivityname").empty();
 
     var loadmyact = "/activity/list/club/?u_id" + global_userid;
-    $.getJSON(loadactivityadd ,function(data){
+    $.getJSON("/activity/list/club/?u_id" + global_userid ,function(data){
         for (var i=0; i<data.length; i++) {
             e.options.add(new Option(data[i].title, data[i].id)); // value not sure
         }
@@ -1262,13 +1288,13 @@ function loadclubname()
 {
     var e = getObj('c_id');
     var loadmyclub = "/club/list/create/?u_id=" + global_userid;
-    $.getJSON(loadmyclub ,function(data){
+    $.getJSON("/club/list/create/?u_id=" + global_userid ,function(data){
         for (var i=0; i<data.length; i++) {
             e.options.add(new Option(data[i].club_name, data[i].club_id)); // value not sure
         }
 
         var loadclubadd = "/club/list/join/?u_id=" + global_userid;
-        $.getJSON(loadclubadd ,function(data){
+        $.getJSON("/club/list/join/?u_id=" + global_userid ,function(data){
             for (var i=0; i<data.length; i++) {
                 e.options.add(new Option(data[i].club_name, data[i].club_id)); // value not sure
             }
@@ -1283,7 +1309,7 @@ function loadclubname()
 function managemyclub()
 {
     var loadmyclub = "/club/list/create/?u_id=" + global_userid;
-    $.getJSON(loadmyclub ,function(data){
+    $.getJSON("/club/list/create/?u_id=" + global_userid ,function(data){
         for (var i=0; i<data.length; i++) {
             e.options.add(new Option(data[i].club_name, data[i].club_id)); // value not sure
             $("#manageactivity").append(actinfocode);
@@ -1306,7 +1332,7 @@ function initchangeclubinfo(clubid)
 
     var clubinfoadd = "/club/detail/?id=" + String(clubid);
 
-    $.getJSON(clubinfoadd ,function(data){
+    $.getJSON("/club/detail/?id=" + String(clubid) ,function(data){
 
         var clubname = data.name;
         var clubintro = data.introduction;
