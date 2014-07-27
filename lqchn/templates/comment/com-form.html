@@ -1,0 +1,21 @@
+<div class="row c-edit" id="com-edit">
+    <div class="col-md-2 face-comment">
+        <img src="../index/image/profile.jpg" width="50px" height="50px" class="img-circle">
+    </div>
+    <div class="col-md-10">
+        <form action="http://192.168.1.107:8080/comment/post/" method="post" id="edit-form">
+            <textarea name="content" class="form-control" rows="3" placeholder="快加入讨论吧！"></textarea>
+            <div class="submit-area" id="submit">
+                <div class="form-group">
+                    <div class="col-sm-8 nickname">
+                        <input type="text" class="form-control input-sm" id="nickname" placeholder="昵称(选填)">
+                        <input type="text" value="1" name="_id" id="_id" hidden="hidden">
+                        <input type="text" value="2" name="u_id" id="u_id" hidden="hidden">
+                        <input type="text" value="0" name="type" id="type" hidden="hidden">
+                    </div>
+                    <div class="col-sm-4 post-comment"><button class="btn btn-success btn-sm" type="submit" id="post-comment">发送</button></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

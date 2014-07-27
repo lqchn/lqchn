@@ -1,0 +1,89 @@
+.block-comment .c-edit{
+    width: 666px;
+    margin: auto;
+}
+
+.block-comment .c-display{
+    width: 666px;
+    margin: auto;
+}
+
+.block-comment .face-comment{
+    padding-left: 55px;
+    padding-top: 5px;
+}
+
+.block-comment .form-control{
+    font-size: 16px;
+    resize: none;
+}
+
+.block-comment .submit-area{
+    float: right;
+    padding-top: 20px;
+}
+
+.block-comment #nickname{
+    font-size: 12px;
+}
+
+.block-comment #post-comment{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.block-comment .nickname{
+    padding-left: 0px;
+    padding-right: 5px;
+}
+
+.block-comment .post-comment{
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+
+.block-comment .p-comment{
+    text-align: left;
+    font-size: 15px;
+}
+
+.block-comment .p-nickname{
+    font-weight: bold;
+    text-align: left;
+}
+
+.block-comment .p-time{
+    font-weight: normal;
+    color: #bbb;
+}
+
+.block-comment .p-action{
+    text-align: left;
+}
+
+.block-comment .p-action a{
+    color: #666;
+}
+
+.block-comment .face-reply{
+    padding-top: 5px;
+}
+
+.block-comment .r-nickname{
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.block-comment .r-comment{
+    text-align: left;
+    font-size: 13px;
+}
+
+.block-comment .r-time{
+    font-weight: normal;
+    text-align: left;
+    font-size: 13px;
+    color: #bbb;
+}

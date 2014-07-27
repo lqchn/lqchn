@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>评论</title>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge">
+    <meta charset="UTF-8">
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="/Users/apple/Desktop/Source/bootstrap-3.2.0/dist/css/bootstrap.css">
+    <!--jquery-->
+    <script src="/Users/apple/Desktop/Source/jquery-2.1.1.min.js"></script>
+    <!--bootstrap js-->
+    <script src="/Users/apple/Desktop/Source/bootstrap-3.2.0/dist/js/bootstrap.js"></script>
+
+    <!--comment css file-->
+    <style>
+        #comment-part{
+            margin: auto;
+            width: 950px;
+        }
+        .block-comment .c-edit{
+            width: 666px;
+            margin: auto;
+            padding-bottom: 70px;
+        }
+
+        .block-comment .c-display{
+            width: 666px;
+            margin: auto;
+        }
+
+        .block-comment .reply-display{
+            width: 666px;
+            margin: auto;
+            padding-left: 100px;
+        }
+
+        .block-comment .face-comment{
+            padding-left: 55px;
+            padding-top: 5px;
+        }
+
+        .block-comment .form-control{
+            font-size: 16px;
+            resize: none;
+        }
+
+        .block-comment .submit-area{
+            float: right;
+            padding-top: 20px;
+        }
+
+        .block-comment #nickname{
+            font-size: 12px;
+        }
+
+        .block-comment #post-comment{
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        .block-comment .nickname{
+            padding-left: 0px;
+            padding-right: 5px;
+        }
+
+        .block-comment .post-comment{
+            padding-left: 5px;
+            padding-right: 0px;
+        }
+
+
+        .block-comment .p-comment{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .block-comment .p-nickname{
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .block-comment .p-time{
+            padding-left: 20px;
+            font-weight: normal;
+            color: #bbb;
+        }
+
+        .block-comment .p-action{
+            text-align: left;
+        }
+
+        .block-comment .p-action a{
+            color: #666;
+        }
+
+        .block-comment .face-reply{
+            padding-top: 5px;
+        }
+
+        .block-comment .r-nickname{
+            text-align: left;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .block-comment .r-comment{
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .block-comment .r-time{
+            padding-left: 10px;
+            font-weight: normal;
+            text-align: left;
+            font-size: 13px;
+            color: #bbb;
+        }
+
+        .form-reply{
+            padding-bottom: 20px;
+            margin-left: 420px;
+            width: 600px;
+        }
+    </style>
+    <!--comment js file-->
+    <script>
+        $(document).ready(function(){
+            //load comment part
+            loadCommentPart();
+        });
+
+        //type of comment
+        var type = 0;
+        //id of the ownner
+        var id = 0;
+        //id of user in the browser
+        var u_id = 0;
+        //id of comment which is being reply
+        var c_id = 0;
+
+        function loadCommentPart(){
+            var formURL = "com-form.html";
+            var mainURL = "com-main.html";
+            var replyURL = "com-reply.html";
+            var listURL = "http://192.168.1.107:8080/user/list/comment/?id=1&u_id=1";
+            var compostURL = "http://192.168.1.107:8080/comment/post/";
+            //1,load form of comment
+            $.ajax({
+                url: formURL,
+                dataType: 'text',
+                success: function(data) {
+                    $(".block-comment").append(data);
+                }
+            });
+
+            var comment = "";
+            var reply = "";
+            //main comment large
+            $.ajax({
+                url: mainURL,
+                dataType: 'text',
+                success: function(data) {
+                    comment = data;
+                }
+            });
+            //reply smll
+            $.ajax({
+                url: replyURL,
+                dataType: 'text',
+                success: function(data) {
+                    reply = data;
+                }
+            });
+            //2,load comment of form
+            $.getJSON(listURL,function(fulldata){
+                id = fulldata.main_id;
+                u_id = fulldata.user_id;
+                data = fulldata.comment;
+                var r = 0;
+                for(var i=0;i<data.length;i++){
+                    for(var j=0;j<data[i].length;j++){
+                        obj = new Object();
+                        obj.rank1 = i;
+                        obj.rank2 = j;
+                        obj.rank3 = r;
+                        obj.c_id = data[i][j].c_id;
+                        if(j == 0){
+                            $(".block-comment").append(comment);
+                            $(".reply").last().data(obj);
+                            $(".com-reply").last().data(obj);
+                            var p_nick = $(".p-nickname:eq("+String(i)+")");
+                            var p_comment = $(".p-comment:eq("+String(i)+")");
+                            var p_time = $(".p-time:eq("+String(i)+")");
+                            p_nick.html(data[i][j].nickname);
+                            p_comment.html(data[i][j].content);
+                            p_time.html(data[i][j].time);
+                        }else{
+                            //reply.data(obj);
+                            $(".block-comment").append(reply);
+                            var r_nick = $(".r-nickname:eq("+String(r)+")");
+                            var r_comment = $(".r-comment:eq("+String(r)+")");
+                            var r_time = $(".r-time:eq("+String(r)+")");
+                            r_nick.html(data[i][j].nickname);
+                            r_comment.html(data[i][j].content);
+                            r_time.html(data[i][j].time);
+                            r++;
+                        }
+                    }
+                }
+                //register comment button
+                $(".favor").click(function(){
+
+                });
+                $(".reply").click(function () {replyPressed($(this));});
+
+                //post new comment
+                $("#post-comment").click(function(){
+                });
+
+                $("textarea").focus(function(){
+                    $("#_id").attr('value',id);
+                    $("#u_id").attr('value',u_id);
+                    $("#type").attr('value',type);
+                });
+
+                $("#com-reply").focus(function(){
+                    $("#type").attr('value',type);
+                    $("#u_id").attr('value',u_id);
+                });
+            });
+        }
+        function replyPressed(self){
+            var rank1 = self.data('rank1');
+            var eq = ":eq("+String(rank1)+")";
+            $(".main-form"+eq).toggle();
+            var c_id = self.data('c_id');
+            $(".com-id"+eq).attr("value",c_id);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<br/>
+<br/>
+<br/>
+
+<div class="block-comment">
+
+</div>
+
+</body>
+
+</html>
