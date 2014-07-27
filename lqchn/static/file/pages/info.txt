@@ -1,30 +1,33 @@
 
 
-<div>基本信息
+<div>
 	<button id="change_info" class="btn-success" data-toggle="modal" data-target="#myModal1" style="background-color:#FFFCF5; float: right; width:100px; height:30px; border:0px; color:black;">
     	修改个人资料
 	</button>
-	<p id="info_nick"></p>
-	<p id="info_sign"></p>
+	<p style="font-size:30px; color: lightblue;">基本信息</p>
+	<p id="info_nick" class="u_info"></p>
+	<p id="info_sign" class="u_info"></p>
 </div>
 <hr />
 
-<div>个人信息
-	<p id="info_name"></p>
-	<p id="info_gender"></p>
-	<p id="info_homeland"></p>
-	<p id="info_birthday"></p>
+<div>
+	<p style="font-size:30px; color: lightblue;">个人信息</p>
+	<p id="info_name" class="u_info"></p>
+	<p id="info_gender" class="u_info"></p>
+	<p id="info_homeland" class="u_info"></p>
+	<p id="info_birthday" class="u_info"></p>
 </div>
 <hr />
 
-<div>其他信息
-	<p id="info_school"></p>
-	<p id="info_entrance"></p>
-	<p id="info_interest"></p>
-	<p id="info_tel"></p>
-	<p id="info_qq"></p>
-	<p id="info_wechat"></p>
-	<p id="info_weibo"></p>
+<div>
+	<p style="font-size:30px; color: lightblue;">其他信息</p>
+	<p id="info_school" class="u_info"></p>
+	<p id="info_entrance" class="u_info"></p>
+	<p id="info_interest" class="u_info"></p>
+	<p id="info_tel" class="u_info"></p>
+	<p id="info_qq" class="u_info"></p>
+	<p id="info_wechat" class="u_info"></p>
+	<p id="info_weibo" class="u_info"></p>
 </div>
 
 
