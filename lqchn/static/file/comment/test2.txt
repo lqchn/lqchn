@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
 
-<head>
-    <title>评论</title>
-    <meta http-equiv="X-UA-COMPATIBLE" content="IE=Edge">
-    <meta charset="UTF-8">
 
-    <!--bootstrap css-->
-    <link rel="stylesheet" href="/static/bootstrap-3.2.0/dist/css/bootstrap.css">
-    <!--jquery-->
-    <script src="/static/jquery-2.1.1.min.js"></script>
-    <!--bootstrap js-->
-    <script src="/static/bootstrap-3.2.0/dist/js/bootstrap.js"></script>
-    <script src="/static/less-1.7.1.min.js"></script>
 
-    <!--comment css file-->
     <style>
         #comment-part{
             margin: auto;
@@ -244,10 +230,6 @@
 
     </script>
 
-</head>
-
-<body>
-
 <br/>
 <br/>
 <br/>
@@ -255,7 +237,3 @@
 <div class="block-comment">
 
 </div>
-
-</body>
-
-</html>
