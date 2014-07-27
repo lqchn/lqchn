@@ -166,15 +166,18 @@ $(document).ready(function(){
 
 
     $("#com").click(function(){
+        alert("1");
         $("#modeul").children().remove();
+        alert("2");
         var file_name = "/static/templates/comment/test2.html"
+        alert("3");
         $.ajax({
             url: file_name,
             dataType: 'html',
             success: function(data) {
-                alert("hi");
+                alert("4");
                 $("#modeul").append(data);
-                alert("nihao");
+                alert("5");
             }
         });
     });
