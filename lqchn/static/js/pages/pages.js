@@ -167,7 +167,7 @@ $(document).ready(function(){
 
     $("#com").click(function(){
         $("#modeul").children().remove();
-        var file_name = "/static/templates/comment/comment.html";
+        var file_name = "/static/templates/comment/test2.html"
         $.ajax({
             url: file_name,
             dataType: 'html',
