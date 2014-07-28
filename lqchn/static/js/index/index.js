@@ -2,9 +2,25 @@ var s_code = '';
 var u_id = '';
 
 $(document).ready(function(){
+    registeEvent();
     getUserInfo();
     registNavbutton();
 });
+
+function registeEvent(){
+    //activity mouse action
+    $(".ac-container").mouseenter(function(){
+        $(this).children(".ac_intro").fadeIn('fast');
+    });
+
+    $(".ac-container").mouseleave(function(){
+        $(this).children(".ac_intro").fadeOut('fast');
+    });
+
+    $(".ac-container").click(function(){
+        window.open('/activity_home/?a_id='+$(this).data('id'));
+    });
+}
 
 function getUserInfo(){
     $.get("/user/info/",function(data,status){
@@ -54,20 +70,6 @@ function getActivityData(){
         for(i;i<6;i++){
             $(".activity-modeul:eq("+String(i)+")").hide();
         }
-    });
-
-    //activity mouse action
-    $(".ac-container").mouseenter(function(){
-        $(this).children(".ac_intro").fadeIn('fast');
-    });
-
-    $(".ac-container").mouseleave(function(){
-        $(this).children(".ac_intro").fadeOut('fast');
-    });
-
-    $(".ac-container").click(function(){
-        alert("a");
-        //window.open('/activity_home/?a_id='+$(this).data('id'));
     });
 }
 
