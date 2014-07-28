@@ -217,9 +217,8 @@ def showClubDetail(request):
 #member action with club
 def joinMemberToClub(request):
 	c_id = request.GET['c_id']
-	user = request.user
 	for u in User_C.objects.all():
-		if u.user.username == user.username:
+		if u.user.username == request.user.username:
 			user = u
 	club = Club.objects.get(id=c_id)
 
@@ -234,14 +233,13 @@ def joinMemberToClub(request):
 
 def memberQuitFromClub(request):
 	c_id = request.GET['c_id']
-	user = request.user
 	for u in User_C.objects.all():
-		if u.user.username == user.username:
+		if u.user.username == request.user.username:
 			user = u
 	club = Club.objects.get(id=c_id)
 
 	for m in club.members.all():
-		if m.MI_user.id == u_id:
+		if m.MI_user.id == user.id:
 			m.delete()
 			break
 
