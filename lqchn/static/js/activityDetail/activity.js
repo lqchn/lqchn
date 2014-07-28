@@ -1,10 +1,14 @@
-var gloabl_aid = "";
-var gloabl_num = "";
-var gloabl_cid = "";
+var global_aid = "";
+var global_num = "";
+var global_cid = "";
+var global_type = "2";
+var global_id = "";
+
 
 $(document).ready(function(){
 
-    gloabl_aid = $("#hideaid").html();
+    global_aid = $("#hideaid").html();
+    global_id = global_aid;
 
     getallinfo();
 
@@ -33,7 +37,7 @@ function getcomment()
 
 function getallinfo()
 {
-    var allinfoadd = "/activity/detail/?a_id=" + gloabl_aid;
+    var allinfoadd = "/activity/detail/?a_id=" + global_aid;
 
     $.getJSON(allinfoadd ,function(data){
         var actbrief = data.a_brief_intro;
@@ -51,11 +55,9 @@ function getallinfo()
         var actloc = data.a_place;
         var actrange = data.a_area;
 
-        gloabl_num = data.a_number;
-        gloabl_cid = data.club_id;
+        global_num = data.a_number;
+        global_cid = data.club_id;
 
-        alert("gloabl_num = " + gloabl_num);
-        alert("gloabl_cid = " + gloabl_cid);        
 
         $("#clubphoto").attr("src", clublogo);
         $("#clubname").html(clubname);
@@ -67,7 +69,7 @@ function getallinfo()
         $("#actvicehost").html("承办单位:" + actundertake);
         $("#actdetail").html(actdetail);
 
-        if(parseInt(gloabl_num) == 1)
+        if(parseInt(global_num) == 1)
             $("#groupsignup").hide();
         else
             $("#singlesignup").hide();
@@ -78,9 +80,9 @@ function getallinfo()
 
 function removeMember()
 {
-    if(gloabl_num < max)
+    if(global_num < max)
     {
-        for(var i = 10; i > gloabl_num - 1; i--)
+        for(var i = 10; i > global_num - 1; i--)
         {
             var str = "#member" + String(i);
             $(str).remove();
@@ -102,7 +104,7 @@ function checkGroupsignup()
         return false;
     }
 
-    for(var i = 0; i < parseInt(gloabl_num); i++)
+    for(var i = 0; i < parseInt(global_num); i++)
     {
         var mname = "m" + String(i) + "_name";
         var mmajor = "m" + String(i) + "_major";
@@ -131,8 +133,8 @@ function checkSingle()
 
 function jointheclub()
 {
-    var joinadd = "/club/join/?c_id=" + gloabl_cid;
-    $.getJSON("/club/join/?c_id=" + gloabl_cid, function(data, status){
+    var joinadd = "/club/join/?c_id=" + global_cid;
+    $.getJSON("/club/join/?c_id=" + global_cid, function(data, status){
 
     });
 }

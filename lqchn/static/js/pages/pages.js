@@ -1,5 +1,7 @@
 var global_userid = "";
-var gloabl_code = "";
+var global_code = "";
+var global_type = "0";
+var global_id = "";
 
 $(document).ready(function(){
     inituser();
@@ -252,9 +254,10 @@ function inituser()
     $.getJSON("/user/info/",function(data){
 
         global_userid = data.id;
+        global_id = global_userid;
         var uname = data.name;
         var upurl = data.photo_url;
-        gloabl_code = data.code;
+        global_code = data.code;
         $("#user_photo").attr("src",upurl);
         $("#user_name").html(uname);
         allinfoadd = "/user/allinfo/?id=" + String(global_userid);
@@ -977,9 +980,9 @@ function initAllinfo()
         }
     });
 
-    var allinfoadd = "/news/list/school/?code=" + gloabl_code;
+    var allinfoadd = "/news/list/school/?code=" + global_code;
     //user userlistfolloadd replace
-    $.getJSON("/news/list/school/?code=" + gloabl_code ,function(data){
+    $.getJSON("/news/list/school/?code=" + global_code ,function(data){
         for(var i = 0; i < data.length; i++)
         {
             var actname = data[i].s_name;

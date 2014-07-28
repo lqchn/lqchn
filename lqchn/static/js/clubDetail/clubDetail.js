@@ -1,5 +1,9 @@
+var global_type = "1";
+var global_id = "";
+
 $(document).ready(function(){
     var c_id = $("#c_id").html();
+    global_id = c_id;
 
     //get full information of club
     url = "/club/detail/?id="+c_id;
