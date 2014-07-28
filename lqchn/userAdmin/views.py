@@ -61,7 +61,7 @@ def getUserInfo(request):
             try:
                 url = u.profile.BP_photo.url
             except:
-                url = ''
+                url = '/media/html_image/index/_profile_face.jpg'
             try:
                 school = u.school.s_code
             except:
@@ -287,7 +287,7 @@ def showUserFollowingList(request):
         try:
             url = user.profile.BP_photo.url
         except:
-            url = ''
+            url = '/media/html_image/index/_profile_face.jpg'
         tem = {
             "user_id": f.followingID,
             "user_name": user.profile.BP_name,
@@ -310,7 +310,7 @@ def showUserFollowedList(request):
         try:
             url = user.profile.BP_photo.url
         except:
-            url = ''
+            url = '/media/html_image/index/_profile_face.jpg'
         tem = {
             "user_id": f.followedID,
             "user_name": user.profile.BP_name,

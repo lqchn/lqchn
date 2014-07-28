@@ -254,7 +254,7 @@ def showClubMembers(request):
 		try:
 			url = u.profile.BP_photo.url
 		except:
-			url = ''
+			url = '/media/html_image/index/_profile_face.jpg'
 		tem = {
 		'id':u.id,
 		'nickname':u.profile.BP_nickname,
@@ -267,7 +267,7 @@ def showClubMembers(request):
 	try:
 		url = l.profile.BP_photo
 	except:
-		url = ''
+		url = '/media/html_image/index/_profile_face.jpg'
 	leader = {
 	'id':l.id,
 	'nickname':l.profile.BP_nickname,
