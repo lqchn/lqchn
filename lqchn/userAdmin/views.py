@@ -354,15 +354,20 @@ def showUserComment(request):
             "c_id":c.id,
             "r_id":r.id,
             "nickname":r.CR_send.profile.BP_nickname,
-            "url":url,
+            "reply_photo":url,
             "time":r.CR_time,
             "content":r.CR_content,
             }
             reply = reply + [tem]
         comment = comment + [reply]
+        try:
+            url = user.profile.BP_photo.url
+        except:
+            url = '/media/html_image/index/_profile_face.jpg'
         result = {
         "comment":comment,
         "main_id":id,
         "user_id":u_id,
+        "comment_photo":url,
         }
     return HttpResponse(json.dumps(result))
