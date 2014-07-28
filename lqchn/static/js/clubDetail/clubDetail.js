@@ -56,6 +56,10 @@ $(document).ready(function(){
     });
 
     $("#follow").click(function(){
-        alert("follow");
+
+        var joinadd = "/club/join/?c_id=" + c_id;
+        $.getJSON("/club/join/?c_id=" + c_id, function(data, status){
+            alert("follow!");
+        });
     });
 });
