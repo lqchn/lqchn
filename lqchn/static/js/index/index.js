@@ -66,7 +66,8 @@ function getActivityData(){
     });
 
     $(".ac-container").click(function(){
-        window.open('/activity_home/?a_id='+$(this).data('id'));
+        alert("a");
+        //window.open('/activity_home/?a_id='+$(this).data('id'));
     });
 }
 
