@@ -58,6 +58,7 @@ $(document).ready(function(){
     $("#follow").click(function(){
         alert(" cukcck!!!");
         var joinadd = "/club/join/?c_id=" + c_id;
+        alert("join add = " + joinadd);
         $.getJSON("/club/join/?c_id=" + c_id, function(data, status){
             alert("follow!!!!");
         });
