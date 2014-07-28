@@ -4,6 +4,8 @@ var global_type = "0";
 var global_id = "";
 
 $(document).ready(function(){
+    global_userid = $("#hideuid").html();
+    global_id = global_userid;
     inituser();
 
     $("#createact").click(function(){
@@ -251,10 +253,8 @@ function confirm_deleteclub()
 function inituser()
 {
     var allinfoadd = "";
-    $.getJSON("/user/info/",function(data){
+    $.getJSON("/user/info/?u_id" + global_userid,function(data){
 
-        global_userid = data.id;
-        global_id = global_userid;
         var uname = data.name;
         var upurl = data.photo_url;
         global_code = data.code;
