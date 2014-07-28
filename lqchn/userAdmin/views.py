@@ -344,11 +344,17 @@ def showUserComment(request):
     comment = []
     for c in user.cmtuser_set.all():
         reply = []
+        url = ''
+        try:
+            url = r.CR_send.profile.BP_photo.url
+        except:
+            url = '/media/html_image/index/_profile_face.jpg'
         for r in c.replyuser_set.all():
             tem = {
             "c_id":c.id,
             "r_id":r.id,
             "nickname":r.CR_send.profile.BP_nickname,
+            "url":url,
             "time":r.CR_time,
             "content":r.CR_content,
             }
