@@ -70,7 +70,7 @@
             </div>
             <div class="modal-body">
                 <div class="teditor">
-                    <form class="form-horizontal" role="form" method="post" name="form" id="form" action="http://192.168.1.107:8080/journal/create/" enctype="multipart/form-data" onsubmit="return check()">
+                    <form class="form-horizontal" role="form" method="post" name="form" id="form" action="/journal/create/" enctype="multipart/form-data" onsubmit="return check()">
                         <div id="tinywarnning" class="alert alert-danger" role="alert" hidden="hidden">请完善所须的资料</div>
 
 
@@ -205,7 +205,7 @@
                 <h4 class="modal-title" id="myModalLabel1">修改资料</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" role="form" name="form1" id="form1" action="http://192.168.1.107:8080/user/update/" method="post" enctype="multipart/form-data" onsubmit="return checkInfo()">
+                <form class="form-horizontal" role="form" name="form1" id="form1" action="/user/update/" method="post" enctype="multipart/form-data" onsubmit="return checkInfo()">
 
                     <div id="editwarnning" class="alert alert-danger" role="alert" hidden="hidden">请完善所需的所有资料</div>
 
@@ -376,7 +376,7 @@
             </div>
             <div class="modal-body">
 
-                <form class="form-horizontal" role="form" name="form2" id="form2" method="post" action="http://192.168.1.107:8080/club/create/" enctype="multipart/form-data" onsubmit="return checkclub()">
+                <form class="form-horizontal" role="form" name="form2" id="form2" method="post" action="/club/create/" enctype="multipart/form-data" onsubmit="return checkclub()">
 
                     <div id="clubwarnning" class="alert alert-danger" role="alert" hidden="hidden">请完善所需的所有资料</div>
 
@@ -477,7 +477,7 @@
             </div>
             <div class="modal-body">
                 <div class="main_body">
-                    <form class="form-horizontal" id="createActivity" role="form" action="http://192.168.1.107:8080/activity/create/" enctype="multipart/form-data" method="post">
+                    <form class="form-horizontal" id="createActivity" role="form" action="/activity/create/" enctype="multipart/form-data" method="post">
                         <div class="modul_basic" hidden="hidden">
 
                             <div class="form-group form-group-sm">
@@ -665,7 +665,7 @@
             </div>
             <div class="modal-body">
 
-                <form class="form-horizontal" role="form" name="form3" id="form3" method="post" action="http://192.168.1.107:8080/club/update/" enctype="multipart/form-data" onsubmit="return checkeditclub()">
+                <form class="form-horizontal" role="form" name="form3" id="form3" method="post" action="/club/update/" enctype="multipart/form-data" onsubmit="return checkeditclub()">
 
                     <input type="text" name="c_id" id="clubid" hidden="hidden"/>
 
