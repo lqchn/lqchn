@@ -253,7 +253,7 @@ function confirm_deleteclub()
 function inituser()
 {
     var allinfoadd = "";
-    $.getJSON("/user/info/?u_id" + global_userid,function(data){
+    $.getJSON("/user/info/?u_id=" + global_userid,function(data){
 
         var uname = data.name;
         var upurl = data.photo_url;

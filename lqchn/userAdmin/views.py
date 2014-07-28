@@ -50,6 +50,22 @@ def confirmUser(request):
     else:
         return HttpResponse('error 00002 failed to login')
 
+def getSelfInfo(request):
+    user = request.user
+    for u in User_C.objects.all():
+        if u.user.username == user.username:
+            url = ''
+            try:
+                url = u.profile.BP_photo.url
+            except:
+                url = ''
+            tem = {
+            'id':u.id,
+            'name':u.profile.BP_nickname,
+            'photo_url':url,
+            'code':u.school.s_code,
+            }
+            return HttpResponse(json.dumps(tem))
 
 def getUserInfo(request):
     u_id = request.GET['u_id']

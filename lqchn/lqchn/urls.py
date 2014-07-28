@@ -19,6 +19,8 @@ urlpatterns = patterns('',
     url(r'^user/create/$','userAdmin.views.createNewUser'),
     #confirm user
     url(r'^user/login/$','userAdmin.views.confirmUser'),
+    #get the information of the user who is using the browser
+    url(r'^user/selfinfo/$','userAdmin.views.getSelfInfo'),
     #get user information in the main page
     url(r'^user/info/$','userAdmin.views.getUserInfo'),
     #get user information when user go to homepage

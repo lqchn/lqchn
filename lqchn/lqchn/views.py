@@ -12,7 +12,8 @@ def register(request):
     return render(request, 'login/register.html')
 
 def homepage(request):
-	return render(request,'pages/pages.html')
+	u_id = request.GET['u_id']
+	return render(request,'pages/pages.html',{'u_id':u_id})
 
 def jumpClubDetail(request):
 	c_id = request.GET['c_id']

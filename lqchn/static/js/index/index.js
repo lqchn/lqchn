@@ -23,11 +23,12 @@ function registeEvent(){
 }
 
 function getUserInfo(){
-    $.get("/user/info/",function(data,status){
+    $.get("/user/selfinfo/",function(data,status){
         data = JSON.parse(data);
         if(data.code){
             window.s_code = data.code;
             window.u_id = data.id;
+            $(".u_name").attr('href','/pages/?u_id='+window.u_id);
             $(".u_name").html(data.name);
             $("#school_code").val(data.code);
             getActivityData();
