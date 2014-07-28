@@ -34,7 +34,7 @@ function getcomment()
 
 function getallinfo()
 {
-    var allinfoadd = "http://192.168.1.107:8080/activity/detail/?a_id=" + gloabl_aid;
+    var allinfoadd = "/activity/detail/?a_id=" + gloabl_aid;
 
     $.getJSON(allinfoadd ,function(data){
         var actbrief = data.a_brief_intro;
@@ -79,11 +79,9 @@ function getallinfo()
 
 function removeMember()
 {
-    var max = 10;
-    var a = 5;
-    if(a < max)
+    if(gloabl_num < max)
     {
-        for(var i = 10; i > a - 1; i--)
+        for(var i = 10; i > gloabl_num - 1; i--)
         {
             var str = "#member" + String(i);
             $(str).remove();
