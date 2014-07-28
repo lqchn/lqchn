@@ -169,7 +169,7 @@ function getJournalData(){
         $(".type5detail").click(function(){
             journalDetail($(this));
         });
-        });
+    });
 
 }
 
