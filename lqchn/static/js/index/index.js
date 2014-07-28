@@ -97,7 +97,7 @@ function getClubData(){
 
 function getJournalData(){
     $(".item-sort").click(function(){
-        $(".item-sort").parent().removeClass(".active")
+        $(".item-sort").parent().removeClass(".active");
         $(this).parent().addClass(".active");
     });
     var url = "";
