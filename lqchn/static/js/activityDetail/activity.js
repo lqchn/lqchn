@@ -130,8 +130,13 @@ function checkSingle()
 
 function jointheclub()
 {
-    var joinadd = "http://192.168.1.107:8080/club/join/?c_id=" + gloabl_cid;
-    $.getJSON(joinadd, function(data){
+    alert("click join the club");
+    var joinadd = "/club/join/?c_id=" + gloabl_cid;
+    $.getJSON("/club/join/?c_id=" + gloabl_cid, function(data, status){
         alert("data = " + data);
+        if(String(status) == "1")
+            alert("success follow");
+        else
+            alert("failed follow");
     });
 }
