@@ -66,13 +66,7 @@ div, p, span, ul, li, a {
     margin-right: 50px;
     height: 70px;
 }
-a:hover {
-    text-decoration: none;
-    color: red;
-}
-a:link {
-    color: blue;
-}
+
 .activity {
     background-color: #FFFCF5;
     padding: 0px;
