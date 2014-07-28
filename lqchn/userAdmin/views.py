@@ -52,26 +52,25 @@ def confirmUser(request):
 
 
 def getUserInfo(request):
-    user = request.user
+    u_id = request.GET['u_id']
+    u = User_C.objects.get(id=u_id)
 
-    for u in User_C.objects.all():
-        if u.user.username == user.username:
-            url = ''
-            school = ''
-            try:
-                url = u.profile.BP_photo.url
-            except:
-                url = '/media/html_image/index/_profile_face.jpg'
-            try:
-                school = u.school.s_code
-            except:
-                school = ''
-            result = {
-                'id': u.id,
-                'name': u.profile.BP_nickname,
-                'photo_url': url,
-                'code': school,
-            }
+    
+    url = ''
+    school = ''
+    try:
+        url = u.profile.BP_photo.url
+    except:
+        url = '/media/html_image/index/_profile_face.jpg'
+    try:
+        school = u.school.s_code
+    except:
+        school = ''
+    result = {
+        'name': u.profile.BP_nickname,
+        'photo_url': url,
+        'code': school,
+    }
     try:
         return HttpResponse(json.dumps(result))
     except:
