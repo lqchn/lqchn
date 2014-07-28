@@ -67,6 +67,10 @@ div, p, span, ul, li, a {
     height: 70px;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .activity {
     background-color: #FFFCF5;
     padding: 0px;
