@@ -13,7 +13,6 @@ $(document).ready(function(){
     });
 
     $("#joinclub").click(function(){
-        alert("click joinclub");
         jointheclub();
     });
 
@@ -132,13 +131,8 @@ function checkSingle()
 
 function jointheclub()
 {
-    alert("click join the club");
     var joinadd = "/club/join/?c_id=" + gloabl_cid;
     $.getJSON("/club/join/?c_id=" + gloabl_cid, function(data, status){
-        alert("data = " + data);
-        if(String(status) == "1")
-            alert("success follow");
-        else
-            alert("failed follow");
+
     });
 }
