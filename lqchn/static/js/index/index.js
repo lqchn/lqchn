@@ -96,6 +96,10 @@ function getClubData(){
 }
 
 function getJournalData(){
+    $(".item-sort").click(function(){
+        $(".item-sort").parent().removeClass(".active")
+        $(this).parent().addClass(".active");
+    });
     var url = "";
     if(window.s_code){
         url = "/journal/list/all/?code="+window.s_code;
