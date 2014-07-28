@@ -17,6 +17,10 @@ span{
 }
 
 /******************************** navigation ********************************/
+.navbar{
+    background-color: white;
+}
+
 .navbar-header{
     padding-left: 50px;
     padding-right: 4px;
@@ -157,6 +161,14 @@ span{
 .ac_record_favor{
     padding-left: 6px;
     color: #888;
+}
+
+.nextPage{
+    color: #999999;
+}
+
+.prevPage{
+    color: #999999;
 }
 
 /******************************** club ********************************/

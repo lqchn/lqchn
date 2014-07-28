@@ -37,7 +37,8 @@ function getActivityData(){
     //get data from server
     $.get(url,function(data,status){
         var ac_list = JSON.parse(data);
-        for(var i=0;i<ac_list.length;i++){
+        var i=0;
+        for(i=0;i<ac_list.length;i++){
             var current = $(".ac-container:eq("+String(i)+")");
             var image = $(".ac_image:eq("+String(i)+")");
             image.attr("src",ac_list[i].image_url);
@@ -50,18 +51,22 @@ function getActivityData(){
             ac_obj.id = ac_list[i].id;
             current.data(ac_obj);
         }
+        for(i;i<6;i++){
+            $(".activity-modeul:eq("+String(i)+")").hide();
+        }
     });
 
     //activity mouse action
     $(".ac-container").mouseenter(function(){
-        $(this).children(".ac_intro").show('fast');
+        $(this).children(".ac_intro").fadeIn('fast');
     });
 
     $(".ac-container").mouseleave(function(){
-        $(this).children(".ac_intro").hide('fast');
+        $(this).children(".ac_intro").fadeOut('fast');
     });
 
     $(".ac-container").click(function(){
+        window.open('/activity_home/?a_id='+$(this).data('id'));
     });
 }
 
