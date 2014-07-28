@@ -1265,7 +1265,7 @@ function loadactivity()
 
     $("#chooseactivityname").empty();
 
-    var loadmyact = "/activity/list/club/?u_id" + global_userid;
+    var loadmyact = "/activity/list/club/?u_id=" + global_userid;
     $.getJSON("/activity/list/club/?u_id" + global_userid ,function(data){
         for (var i=0; i<data.length; i++) {
             e.options.add(new Option(data[i].title, data[i].id)); // value not sure
