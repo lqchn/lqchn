@@ -155,62 +155,37 @@ function getJournalData(){
             $(".type5detail").last().data(obj);
         }
         $(".type1detail").click(function(){
-            $.getJSON(url_detail, function (data) {
-                title = data.title;
-                content = data.html;
-                activity_title = data.activity_title;
-                activity_id = data.activity_id;
-                $(".j-text-title").html(title);
-                $(".j-text-activity").html(activity_title);
-                $(".j-text-content").html(content);
-            });
+            journalDetail($(this));
         });
         $(".type2detail").click(function(){
-            $.getJSON(url_detail, function (data) {
-                title = data.title;
-                content = data.html;
-                activity_title = data.activity_title;
-                activity_id = data.activity_id;
-                $(".j-text-title").html(title);
-                $(".j-text-activity").html(activity_title);
-                $(".j-text-content").html(content);
-            });
+            journalDetail($(this));
         });
         $(".type3detail").click(function(){
-            $.getJSON(url_detail, function (data) {
-                title = data.title;
-                content = data.html;
-                activity_title = data.activity_title;
-                activity_id = data.activity_id;
-                $(".j-text-title").html(title);
-                $(".j-text-activity").html(activity_title);
-                $(".j-text-content").html(content);
-            });
+            journalDetail($(this));
         });
         $(".type4detail").click(function(){
-            $.getJSON(url_detail, function (data) {
-                title = data.title;
-                content = data.html;
-                activity_title = data.activity_title;
-                activity_id = data.activity_id;
-                $(".j-text-title").html(title);
-                $(".j-text-activity").html(activity_title);
-                $(".j-text-content").html(content);
-            });
+            journalDetail($(this));
         });
         $(".type5detail").click(function(){
-            $.getJSON(url_detail, function (data) {
-                title = data.title;
-                content = data.html;
-                activity_title = data.activity_title;
-                activity_id = data.activity_id;
-                $(".j-text-title").html(title);
-                $(".j-text-activity").html(activity_title);
-                $(".j-text-content").html(content);
-            });
+            journalDetail($(this));
         });
         });
 
+}
+
+function journalDetail(current){
+    var url_detail = "/journal/detail/?a_id="+current.data('id');
+    $.getJSON(url_detail, function (data) {
+        title = data.title;
+        content = data.html;
+        activity_title = data.activity_title;
+        activity_id = data.activity_id;
+        $(".j-text-title").html(title);
+        $(".j-text-activity").html(activity_title);
+        $(".j-text-content").html(content);
+        $(".j-text-author").html();
+        $(".j-text-editor").html();
+    });
 }
 
 function getRequestData(){
