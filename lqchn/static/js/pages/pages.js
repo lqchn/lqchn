@@ -24,7 +24,8 @@ $(document).ready(function(){
 
         //user clublustalladd replace
         $.getJSON("/club/list/create/?u_id=" + global_userid ,function(data){
-            for(var i = 0; i < data.length; i++)
+            var i = 0;
+            for(i = 0; i < data.length; i++)
             {
                 var clubname = data[i].club_name;
                 var detail = data[i].club_introduction;
@@ -58,12 +59,12 @@ $(document).ready(function(){
 
             //user clublustalladd replace
             $.getJSON("/club/list/join/?u_id=" + global_userid ,function(data){
-                for(var i = 0; i < data.length; i++)
+                for(var j = 0; j < data.length;j++ ,i++)
                 {
-                    var clubname = data[i].club_name;
-                    var detail = data[i].club_introduction;
-                    var clubid = data[i].club_id;
-                    var clubph = data[i].club_logo;
+                    var clubname = data[j].club_name;
+                    var detail = data[j].club_introduction;
+                    var clubid = data[j].club_id;
+                    var clubph = data[j].club_logo;
                     $("#modeul").append(clubcode);
                     $(".club_detail:eq("+ String(i) +")").html(detail);
                     $(".club_name:eq("+ String(i) +")").html(clubname);
