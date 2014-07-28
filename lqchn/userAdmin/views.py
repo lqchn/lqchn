@@ -339,7 +339,6 @@ def showUserInSchool(request):
 
 def showUserComment(request):
     id = request.GET['id']
-    u_id = request.GET['u_id']
     user = User_C.objects.get(id=id)
     comment = []
     for c in user.cmtuser_set.all():
@@ -367,7 +366,6 @@ def showUserComment(request):
         result = {
         "comment":comment,
         "main_id":id,
-        "user_id":u_id,
         "comment_photo":url,
         }
     return HttpResponse(json.dumps(result))
