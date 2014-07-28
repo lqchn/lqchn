@@ -22,5 +22,6 @@ def jumpActivityDetail(request):
 	a_id = request.GET['a_id']
 	return render(request,'activityDetail/activity.html',{'a_id':a_id})
 
-def commentTest(request):
-	return render(request,'comment/test2.html')
+def userHome(request):
+	u_id = request.GET['u_id']
+	return render(request,'pages/pages.html',{'u_id':u_id})

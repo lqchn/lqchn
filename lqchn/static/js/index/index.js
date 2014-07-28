@@ -120,16 +120,32 @@ function getJournalData(){
         $("#art").html(type4_list.length);
         $("#special").html(type5_list.length);
         for(var i=0;i<type1_list.length;i++){
-
+            string = "<li><a href='javascript:void(0)' class='type1detail'>"+type1_list[i].title+"</a></li>";
+            obj = new Object();
+            obj.id = type1_list[i].activity_id;
+            $("#type1").append(string);
+            $(".type1detail").last().data(obj);
         }
-        for(var i=0;i<type1_list.length;i++){
-
+        for(var i=0;i<type2_list.length;i++){
+            string = "<li><a href='javascript:void(0)' class='type2detail'>"+type2_list[i].title+"</a></li>";
+            obj = new Object();
+            obj.id = type2_list[i].activity_id;
+            $("#type2").append(string);
+            $(".type2detail").last().data(obj);
         }
-        for(var i=0;i<type1_list.length;i++){
-
+        for(var i=0;i<type3_list.length;i++){
+            string = "<li><a href='javascript:void(0)' class='type3detail'>"+type3_list[i].title+"</a></li>";
+            obj = new Object();
+            obj.id = type3_list[i].activity_id;
+            $("#type3").append(string);
+            $(".type3detail").last().data(obj);
         }
-        for(var i=0;i<type1_list.length;i++){
-
+        for(var i=0;i<type4_list.length;i++){
+            string = "<li><a href='javascript:void(0)' class='type5detail'>"+type4_list[i].title+"</a></li>";
+            obj = new Object();
+            obj.id = type4_list[i].activity_id;
+            $("#type4").append(string);
+            $(".type4detail").last().data(obj);
         }
         for(var i=0;i<type5_list.length;i++){
             string = "<li><a href='javascript:void(0)' class='type5detail'>"+type5_list[i].title+"</a></li>";
@@ -138,18 +154,20 @@ function getJournalData(){
             $("#type5").append(string);
             $(".type5detail").last().data(obj);
         }
-        $(".type5detail").click(function(){
-            var url_detail = "/journal/detail/?a_id="+$(this).data('id');
-            $.getJSON(url_detail,function(data){
-                title = data.title;
-                content = data.html;
-                activity_title = data.activity_title;
-                activity_id = data.activity_id;
-                $(".j-text-title").html(title);
-                $(".j-text-activity").html(activity_title);
-                $(".j-text-content").html(content);
-            });
+        $(".type5detail").click();
         });
+
+    function detailClick(){
+        var url_detail = "/journal/detail/?a_id="+$(this).data('id');
+        $.getJSON(url_detail,function(data){
+            title = data.title;
+            content = data.html;
+            activity_title = data.activity_title;
+            activity_id = data.activity_id;
+            $(".j-text-title").html(title);
+            $(".j-text-activity").html(activity_title);
+            $(".j-text-content").html(content);
+        }
 
     });
 }
