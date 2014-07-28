@@ -96,12 +96,17 @@ def showActivityList(request):
 		'favor':a.record.numFavor,
 		}
 		result = result + [tem]
+		#number of views
+		numberOfViewsPlus(a)
 
 	return HttpResponse(json.dumps(result))
 
 def showActivityDetail(request):
 	a_id = request.GET['a_id']
 	a = Activity.objects.get(id=a_id)
+	#number of views
+	numberOfViewsPlus(a)
+	
 	club = a.club.HC_club
 	result = {
 	'a_id':a.id,
@@ -339,3 +344,7 @@ def createGlobalNews(s_id,o_id,t):
 	new_news.school = Club.objects.get(id=s_id).school
 
 	new_news.save()
+
+def numberOfViewsPlus(activity):
+	activity.record.numViews += 1
+	activity.record.save()

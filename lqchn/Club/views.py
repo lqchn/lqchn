@@ -128,6 +128,8 @@ def showClubList(request):
 		"member":len(c.members.all()),
 		}
 		result = result + [tem]
+		#number of views
+		numberOfViewsPlus(c)
 
 	return HttpResponse(json.dumps(result))
 
@@ -185,6 +187,8 @@ def showClubDetail(request):
 	id = request.GET['id']
 
 	club = Club.objects.get(id=id)
+	#number of views
+	numberOfViewsPlus(club)
 
 	try:
 		url = club.information.logo.url
@@ -322,4 +326,6 @@ def createGlobalNews(s_id,o_id,t):
 	new_news.school = User_C.objects.get(id=s_id).school
 	new_news.save()
 
-
+def numberOfViewsPlus(club):
+	club.record.numViews += 1
+	club.record.save()
