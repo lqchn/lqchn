@@ -180,11 +180,14 @@ function journalDetail(current){
         content = data.html;
         activity_title = data.activity_title;
         activity_id = data.activity_id;
+        author = data.author;
+        editor = data.editor;
         $(".j-text-title").html(title);
         $(".j-text-activity").html(activity_title);
         $(".j-text-content").html(content);
-        $(".j-text-author").html();
-        $(".j-text-editor").html();
+        $(".j-text-author").html("作者："+author);
+        $(".j-text-editor").html("编辑："+editor);
+        $(".j-text-activity").attr('href','/activity_home/?a_id='+activity_id);
     });
 }
 
