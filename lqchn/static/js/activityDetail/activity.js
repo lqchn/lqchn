@@ -13,6 +13,7 @@ $(document).ready(function(){
     });
 
     $("#joinclub").click(function(){
+        alert("click joinclub");
         jointheclub();
     });
 
@@ -53,6 +54,9 @@ function getallinfo()
 
         gloabl_num = data.a_number;
         gloabl_cid = data.club_id;
+
+        alert("gloabl_num = " + gloabl_num);
+        alert("gloabl_cid = " + gloabl_cid);        
 
         $("#clubphoto").attr("src", clublogo);
         $("#clubname").html(clubname);
