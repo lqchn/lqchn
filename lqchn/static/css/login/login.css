@@ -21,7 +21,7 @@ div, form, div, input, body {
     padding-top: 6px;
 }
 .subButton {
-    background-color: #3399cc;
+    border-radius: 0px;
     width: 260px;
     height: 46px;
     border: 0px;
@@ -38,6 +38,10 @@ div, form, div, input, body {
 #attention {
     width:255px;
     height:55px;
+}
+
+.form-control{
+    border-radius: 0px;
 
 }
 
@@ -70,17 +74,17 @@ div, form, div, input, body {
 }
 .blogNum {
     position: absolute;
-    left:30%;
+    left:39%;
     bottom: 3%;
 }
 .postNum {
     position: absolute;
-    left:41%;
+    left:49%;
     bottom: 3%;
 }
 .second {
     position: absolute;
-    left:52%;
+    left:59%;
     bottom: 3%;
 }
 

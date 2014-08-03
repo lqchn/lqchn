@@ -3,7 +3,7 @@ div, form, div, input, body {
     margin: 0px;
 }
 .registerBody {
-    background: url("football.jpg");
+    background: url("face.jpg");
     margin: 0px auto;
     background-position: center top;
 }
@@ -18,7 +18,7 @@ div, form, div, input, body {
     padding-top: 6px;
 }
 .subButton {
-    background-color: #3399cc;
+    border-radius: 0px;
     width: 260px;
     height: 46px;
     border: 0px;
@@ -35,6 +35,5 @@ div, form, div, input, body {
 #attention {
     width:255px;
     height:55px;
-
 }
 

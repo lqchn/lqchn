@@ -7,13 +7,13 @@
                     <h3 style="font-weight: lighter">
                         <a class="club_name" href="#"></a>
                         <p style="float: right;">
-                            <button class="btn btn-success myclubbtn" data-toggle="modal" data-target="#myModal6" style="background-color:#F3EFE5; border: 0; ">我创建的</button>
+                            <button class="btn btn-success myclubbtn" data-toggle="modal" data-target="#myModal6">我创建的</button>
                         </p>
                     </h3>
                     <p class="club_detail">
                         
                     </p>
-                    <hr />
                 </div>
             </div>
         </div>
+        <hr />

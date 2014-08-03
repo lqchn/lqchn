@@ -1,19 +1,16 @@
         <div class="row">
             <div class="col-md-2">
-                <a class="imghref"><img class="img-circle club_img" style="width:50px; height:50px; margin-left:20px;margin-top: 40px;"></a>
+                <a class="imghref"><img class="img-circle club_img" style="width:100px; height:100px;"></a>
             </div>
             <div class="col-md-10">
                 <div>
-                    <h3 style="font-weight: lighter">
-                        <a class="club_name" href="#"></a>
-                        <p style="float: right;">
-                            <button class="delete btn btn-success" style="background-color:#F3EFE5; border: 0; "> Delete </button>
-                        </p>
-                    </h3>
-                    <p class="club_detail">
-                        
-                    </p>
-                    <hr />
+                    <a class="club_name" href="#"></a>
+                    <div style="float: right;">
+                        <button class="delete btn btn-success">删除</button>
+                    </div>
+                    <p class="club_detail"></p>
+
                 </div>
             </div>
         </div>
+        <hr />

@@ -995,7 +995,7 @@ function initAllinfo()
 
             if(pertype == "1")
             {
-                $(".acttype:eq("+ String(i) +")").html("创建了");
+                $(".acttype:eq("+ String(i) +")").html("创建了俱乐部");
                 $(".acttime:eq("+ String(i) +")").html(pertime);
                 $(".actclub:eq("+ String(i) +")").html(actname);
                 $(".actclub:eq("+ String(i) +")").attr("href", "/user_home/?u_id=" + actid);
@@ -1013,7 +1013,7 @@ function initAllinfo()
             }
             else if(pertype == "3")
             {
-                $(".acttype:eq("+ String(i) +")").html("发布了");
+                $(".acttype:eq("+ String(i) +")").html("发布了活动");
                 $(".acttime:eq("+ String(i) +")").html(pertime);
                 $(".actclub:eq("+ String(i) +")").html(actname);
                 $(".actclub:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + actid);
@@ -1022,7 +1022,7 @@ function initAllinfo()
             }
             else
             {
-                $(".acttype:eq("+ String(i) +")").html("发布了");
+                $(".acttype:eq("+ String(i) +")").html("发布了日志");
                 $(".acttime:eq("+ String(i) +")").html(pertime);
                 $(".actclub:eq("+ String(i) +")").html(actname);
                 $(".actclub:eq("+ String(i) +")").attr("href", "/club_home/?c_id=" + actid);

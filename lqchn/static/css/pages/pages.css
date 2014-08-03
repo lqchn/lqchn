@@ -2,46 +2,69 @@ div, p, span, ul, li, a {
     margin: 0;
     padding: 0;
 }
-.maindiv {
-    margin-left: 100px;
+
+body{
+
 }
+
+.navbar{
+    background-color: #fafafa;
+    margin-bottom: 0px;
+}
+
+.maindiv {
+
+}
+
 .leftpart {
-    margin-left: 50px;
-    margin: 0px;
-    padding: 0px;
-    height: 750px;
+    height: 100%;
 }
 .midpart {
     margin: 0px;
     padding: 0px;
-    background-color: #F3EFE5;
-    height: 750px;
+    background-color: white;
 }
+
 .rightpart {
-    margin: 0px;
-    padding: 0px;
-    height: 750px;
+    height: 100%;
+    background-color: white;
 }
 .userinfo {
     height: 295px;
-    background-color: #81A9CA;
+    background-color: #40b189;
 }
+
 .showinfo {
+    padding-left: 0px;
+    padding-right: 0px;
     height: 220px;
-    background-color: lavender;
+    background-color: #40b189;
 }
 .personinfo {
-    height: 225px;
-    background-color: #81A9CA;
+    height: 250px;
+    background-color: #40b189;
 }
-
-
 
 .userphoto {
-    margin-left:70px;
-    weight: 80px;
-    height: 80px;
+    margin-top: 36px;
+    margin-left: 64px;
+    margin-right: 70px;
 }
+
+.user_name{
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+.user_sign{
+    margin-top: 20px;
+    font-size: 13px;
+    color: white;
+    text-align: center;
+}
+
 .folbut {
     padding: 5px;
     padding-left: 25px;
@@ -51,20 +74,45 @@ div, p, span, ul, li, a {
     margin-left: 60px;
 }
 .tag {
+    text-align: center;
     text-decoration:none;
-    color: darkgray;
+    color: lightgray;
     font-weight: lighter;
-    font-size: 35px;
-    margin-left: 40px;
+    font-size: 18px;
 }
+
+.tag-active{
+    color: #40b189;
+}
+
 .tabpage {
-    background-color: #FFFCF5;
-    padding: 0px;
-    margin: 0px;
+    margin:auto;
     margin-top: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
-    height: 70px;
+    margin-bottom: 20px;
+}
+
+.act_hr{
+    border: 0;
+    height: 1px;
+    background-color: #40b189;
+}
+
+.club_hr{
+    border: 0;
+    height: 1px;
+    background-color: #eeeeee;
+}
+
+.info_hr{
+    border: 0;
+    height: 1px;
+    background-color: #eeeeee;
+}
+
+.com_hr{
+    border: 0;
+    height: 1px;
+    background-color: #eeeeee;
 }
 
 a:hover {
@@ -72,24 +120,33 @@ a:hover {
 }
 
 .activity {
-    background-color: #FFFCF5;
+    background-color: white;
     padding: 0px;
     margin: 0px;
     margin-top: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 32px;
+    margin-right: 32px;
     height: 640px;
-    width: 680px;
 }
+
 .actinfo {
-    padding: 0px;
-    margin: 0px;
-    width: 562px;
 }
+
 .actphoto {
-    padding: 0px;
-    margin: 0px;
-    margin-left: 16px;
+}
+
+.imghref{
+
+}
+
+.act_title{
+    font-size: 18px;
+}
+
+.act_intro{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 14px;
 }
 
 .iE {
@@ -100,4 +157,81 @@ a:hover {
 
 .u_info {
     font-size: 18px;
+}
+
+.user_contact_title{
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-size: 19px;
+    color: white;
+}
+
+.user_contact{
+    font-size: 14px;
+    color: #eeeeee;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 5px;
+}
+
+.right-bar{
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #3c3f41;
+    overflow: auto;
+}
+
+.clubact{
+    font-size: 14px;
+}
+
+.actclub{
+    font-size: 14px;
+}
+
+.acttype{
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #dddddd;
+}
+
+.acttime{
+    padding-top: 10px;
+    font-size: 12px;
+    color: #a2a2a2;
+    text-align: right;
+}
+
+.acthr{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    margin-left: -15px;
+    margin-right: -15px;
+    border: 0;
+    background-color: #313130;
+    height: 1px;
+}
+
+.userpicture{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.banner-title{
+    font-size: 19px;
+    padding-bottom: 30px;
+    margin-left: 10px;
+}
+
+.u_info{
+    font-size: 14px;
+    margin-left: 50px;
+    line-height: 250%;
+}
+
+.change_info{
+    float: right;
 }

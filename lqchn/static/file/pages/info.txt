@@ -1,17 +1,17 @@
 
 
 <div>
-	<button id="change_info" class="btn-success" data-toggle="modal" data-target="#myModal1" style="background-color:#FFFCF5; float: right; width:100px; height:30px; border:0px; color:black;">
+	<button id="change_info" class="btn btn-success change_info" data-toggle="modal" data-target="#myModal1">
     	修改个人资料
 	</button>
-	<p style="font-size:30px; color: lightblue;">基本信息</p>
+	<p class="banner-title">基本信息</p>
 	<p id="info_nick" class="u_info"></p>
 	<p id="info_sign" class="u_info"></p>
 </div>
 <hr />
 
 <div>
-	<p style="font-size:30px; color: lightblue;">个人信息</p>
+	<p class="banner-title">个人信息</p>
 	<p id="info_name" class="u_info"></p>
 	<p id="info_gender" class="u_info"></p>
 	<p id="info_homeland" class="u_info"></p>
@@ -20,7 +20,7 @@
 <hr />
 
 <div>
-	<p style="font-size:30px; color: lightblue;">其他信息</p>
+	<p class="banner-title">其他信息</p>
 	<p id="info_school" class="u_info"></p>
 	<p id="info_entrance" class="u_info"></p>
 	<p id="info_interest" class="u_info"></p>

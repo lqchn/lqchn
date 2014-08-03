@@ -32,13 +32,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="/index/">主页</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                <img src="image/f2.jpeg" class="img-circle" style="width:40px;height:40px; margin-left: 580px;"/>
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -756,46 +754,48 @@
 <div class="row maindiv">
     <div class="col-md-2 leftpart">
         <div class="userinfo">
-            <img id="user_photo" class="img-circle userphoto" src="image/f1.jpg"  style="width:100px; height: 100px;"/>
-            <h4 id="user_name" style="text-align: center"></h4>
-            <p id="user_sign" style="font-weight: lighter; text-align: center; color: #ffffff; padding: 18px;">
+            <img id="user_photo" class="img-circle userphoto" src="image/f1.jpg"  width="88px" height="88px"/>
+            <p id="user_name" class="user_name"></p>
+            <p id="user_sign" class="user_sign">
 
             </p>
             <a href="#" class="folbut" style="color: #ffffff;" id="attfriend" >关注</a>
         </div>
         <div class="showinfo">
             <div class="userpicture">
-                <span> <img id="logpic1" class="img-thumbnail" style="width:130px;height:104px;float:left;"/> </span>
-                <span> <img id="logpic2" class="img-thumbnail" style="width:80px;height:104px;float:right;"/> </span>
-                <span> <img id="logpic3" class="img-thumbnail" style="width:80px;height:104px;float:left;"/> </span>
-                <span> <img id="logpic4" class="img-thumbnail" style="width:130px;height:104px;float:right;"/> </span>
+                <span> <img src="/media/html_image/login/face.jpg" id="logpic1" class="" style="width:100%;height:100%;"/> </span>
             </div>
         </div>
         <div class="personinfo">
-            <h4 style="font-weight: lighter; text-align: center; color: #ffffff;" id="pn">电话:<br/>  </h4>
-            <h4 style="font-weight: lighter; text-align: center; color: #ffffff;" id="fe">爱好:<br/> </h4>
-            <h4 style="font-weight: lighter; text-align: center; color: #ffffff;" id="bd">生日:<br/> </h4>
-            <h4 style="font-weight: lighter; text-align: center; color: #ffffff;" id="qq">QQ:<br/> </h4>
-            <h4 style="font-weight: lighter; text-align: center; color: #ffffff;" id="wc">微信:<br/> </h4>
+            <p class="user_contact_title">联系方式</p>
+            <p class="user_contact" id="pn">电话:<br/>  </p>
+            <p class="user_contact" id="fe">爱好:<br/> </p>
+            <p class="user_contact" id="bd">生日:<br/> </p>
+            <p class="user_contact" id="qq">QQ:<br/> </p>
+            <p class="user_contact" id="wc">微信:<br/> </p>
         </div>
     </div>
 
-    <div class="col-md-7 midpart">
+    <div class="col-md-8 midpart">
         <div class="midbody">
-            <div class="tabpage">
+            <div class="tabpage row">
+                <div class="col-md-3">
+                    <p style="text-align: center"><a id="act" href="#" class="tag tag-active"> 活动 </a></p>
+                    <hr class="act_hr">
+                </div>
+                <div class="col-md-3">
+                    <p style="text-align: center"><a id="club" href="#" class="tag"> 社团 </a></p>
+                    <hr class="club_hr">
+                </div>
+                <div class="col-md-3">
+                    <p style="text-align: center"><a id="info" href="#" class="tag"> 个人信息 </a></p>
+                    <hr class="info_hr">
+                </div>
+                <div class="col-md-3">
+                    <p style="text-align: center"><a id="com" href="#" class="tag"> 留言板 </a></p>
+                    <hr class="com_hr">
+                </div>
 
-                <span style="height:180px;">
-                    <a id="act" href="#" class="tag"> 活动 </a>
-                </span>
-                <span>
-                    <a id="club" href="#" class="tag"> 社团 </a>
-                </span>
-                <span>
-                    <a id="info" href="#" class="tag"> 个人信息 </a>
-                </span>
-                <span>
-                    <a id="com" href="#" class="tag"> 留言板 </a>
-                </span>
             </div>
 
             <div id="modeul" class="activity" style="border: 0; overflow: auto; overflow-x: hidden;">
@@ -806,11 +806,7 @@
 
     <div class="col-md-2 rightpart" >
 
-        <div id="allinfo" style="height: 400px; background-color: #FFFCF5; overflow: auto;">
-
-        </div>
-
-        <div id="friendlist" style="height: 350px; background-color: #FFFCF5">
+        <div id="allinfo" class="right-bar">
 
         </div>
 
@@ -819,7 +815,7 @@
 
 </div>
 
-<p id="hideuid">{{u_id}}</p>
+<p id="hideuid" hidden="hidden">{{u_id}}</p>
 
 
 

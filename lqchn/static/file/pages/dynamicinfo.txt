@@ -1,5 +1,5 @@
-            <a class="actclub" href="#" style="font-size: 20px;"></a><span class="acttype" style="font-size: 20px;"></span>
-            <a class="clubact" style="font-size: 20px;" href="#"></a>
-            <p class="acttime" style="font-size: 10px; float: right;" href="#"></p>
-            <br/>
-            <br/>
+            <a class="actclub" href="#" target="_blank"></a>
+            <span class="acttype"></span>
+            <a class="clubact" href="#" target="_blank"></a>
+            <p class="acttime" href="#"></p>
+            <hr class="acthr">
